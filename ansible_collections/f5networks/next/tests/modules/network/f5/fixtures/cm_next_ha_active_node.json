@@ -1,0 +1,31 @@
+{
+    "_embedded": {
+        "devices": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/inventory?filter=address+eq+%2710.146.194.143%27/a3cad23c-859e-4053-ba4c-5069bc0b03b7"
+                    }
+                },
+                "address": "10.146.194.143",
+                "certificate_validated": "2023-11-08T16:13:10.519647Z",
+                "certificate_validation_error": "tls: failed to verify certificate: x509: cannot validate certificate for 10.146.194.143 because it doesn't contain any IP SANs",
+                "certificate_validity": false,
+                "hostname": "testecosyshyd01",
+                "id": "a3cad23c-859e-4053-ba4c-5069bc0b03b7",
+                "mode": "STANDALONE",
+                "platform_name": "VMware",
+                "platform_type": "VE",
+                "port": 5443,
+                "version": "20.0.1-2.139.10+0.0.136"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/inventory?filter=address+eq+%2710.146.194.143%27"
+        }
+    },
+    "count": 1,
+    "total": 1
+}

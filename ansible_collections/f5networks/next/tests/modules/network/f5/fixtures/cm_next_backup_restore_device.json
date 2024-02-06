@@ -1,0 +1,30 @@
+{
+    "_embedded": {
+        "devices": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/inventory/7ffcf978-4800-428d-896c-96e9535342e5"
+                    }
+                },
+                "address": "10.1.1.10",
+                "certificate_validated": "2023-08-19T00:08:02.634636Z",
+                "certificate_validation_error": "tls: failed to verify certificate: x509: cannot validate certificate for 10.1.1.10 because it doesn't contain any IP SANs",
+                "certificate_validity": false,
+                "hostname": "big-ip-next-03.f5demo.com",
+                "id": "7ffcf978-4800-428d-896c-96e9535342e5",
+                "mode": "STANDALONE",
+                "platform_type": "ve",
+                "port": 5443,
+                "version": "20.0.0-2.94.0+0.0.26"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/inventory"
+        }
+    },
+    "count": 1,
+    "total": 1
+}

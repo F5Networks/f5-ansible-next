@@ -1,0 +1,33 @@
+{
+    "_embedded": {
+        "users": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/1be671f0-e34c-47fb-a505-1dd672a8bbf7"
+                    }
+                },
+                "force_change_password": false,
+                "id": "1be671f0-e34c-47fb-a505-1dd672a8bbf7",
+                "username": "admin"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/f59f8e8d-6f12-434b-80e3-47bbeea889aa"
+                    }
+                },
+                "display_name": "test_user",
+                "email": "",
+                "force_change_password": true,
+                "id": "f59f8e8d-6f12-434b-80e3-47bbeea889aa",
+                "username": "test_api"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/users"
+        }
+    }
+}

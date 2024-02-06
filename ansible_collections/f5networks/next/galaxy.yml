@@ -1,0 +1,20 @@
+authors:
+  - Wojciech Wypior (@wojtek0806)
+dependencies:
+  ansible.netcommon: ">=2.0.0"
+description: BIG-IP NEXT collection to manage NEXT instances with BIG-IP NEXT Central Manager
+documentation: https://clouddocs.f5.com/products/orchestration/ansible/devel/next/modules_4_0/module_index.html
+homepage: https://clouddocs.f5.com/products/orchestration/ansible/devel/
+issues: https://github.com/F5Networks/f5-ansible-next/issues
+license:
+  - GPL-3.0-only
+name: next
+namespace: f5networks
+readme: README.md
+repository: https://github.com/F5Networks/f5-ansible-next
+tags:
+  - f5
+  - networking
+  - next
+  - cm
+version: 0.8.0-beta

@@ -1,0 +1,24 @@
+{
+    "_embedded": {
+        "files": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/files/1b1d07f3-3cd1-4326-be5e-683031f4870f"
+                    }
+                },
+                "description": "file to test stuff",
+                "file_name": "random_file",
+                "file_size": 24269,
+                "hash": "5553857c29abf3733e4a95076b069e2590a51ce4f0f9536bc15080c62dcc1720",
+                "id": "1b1d07f3-3cd1-4326-be5e-683031f4870f",
+                "updated": "2023-09-05T12:45:04.871517Z"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/files"
+        }
+    }
+}

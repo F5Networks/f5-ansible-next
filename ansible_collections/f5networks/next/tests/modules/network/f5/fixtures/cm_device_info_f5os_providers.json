@@ -1,0 +1,45 @@
+{
+    "_embedded": {
+        "providers": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/providers/f5os/e2f21bcf-4687-4d47-86ee-d593b84aa8a1"
+                    }
+                },
+                "connection": {
+                    "authentication": {
+                        "type": "basic",
+                        "username": "admin"
+                    },
+                    "host": "10.144.140.80:8888"
+                },
+                "id": "e2f21bcf-4687-4d47-86ee-d593b84aa8a1",
+                "name": "ansible-f5os",
+                "type": "RSERIES"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/providers/f5os/aa9f20ee-6dbe-4ba4-b020-01411506b98f"
+                    }
+                },
+                "connection": {
+                    "authentication": {
+                        "type": "basic",
+                        "username": "admin"
+                    },
+                    "host": "10.144.140.81:8888"
+                },
+                "id": "aa9f20ee-6dbe-4ba4-b020-01411506b98f",
+                "name": "ansible-f5os2",
+                "type": "VELOS"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/providers/f5os"
+        }
+    }
+}

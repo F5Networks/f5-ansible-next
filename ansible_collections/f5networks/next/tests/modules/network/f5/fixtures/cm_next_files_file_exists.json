@@ -1,0 +1,271 @@
+{
+    "_embedded": {
+        "files": [
+            {
+                "_links": {
+                    "self": "/files/01d55c2b-00c8-45c4-9a63-f994c08cc8f5"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "dcd4348630edc37b32c7b85c5e50f1e45d5a66ef6105334af10f6948e0091fea",
+                "id": "01d55c2b-00c8-45c4-9a63-f994c08cc8f5",
+                "name": "appsvcs-declarations",
+                "size": 532,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/01d55c2b-00c8-45c4-9a63-f994c08cc8f5-b8705d75-9f95-4845-9e37-2bed859bc66b"
+            },
+            {
+                "_links": {
+                    "self": "/files/04eed4da-a3f9-4193-bdc5-952c437cbbcd"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "40a91b7be1f573fe2a7ef149fb9553014c6ab7f16747ae3073048c78e871d5b1",
+                "id": "04eed4da-a3f9-4193-bdc5-952c437cbbcd",
+                "name": "tenantYyVAiCjEQ8WuxswV1FFhmA:irule_demo_app:tlsserver_local_cert:certificate",
+                "size": 2687,
+                "type": "CERTIFICATE",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/04eed4da-a3f9-4193-bdc5-952c437cbbcd-2d2cd62c-6541-468b-81ee-b1651d54163c"
+            },
+            {
+                "_links": {
+                    "self": "/files/0dabcdc8-a4c6-471b-9cfc-e8932fd83a4f"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "d97f2ada901d5746e72467ba3840a63e0e9b9edf95e44d78121534d009e32670",
+                "id": "0dabcdc8-a4c6-471b-9cfc-e8932fd83a4f",
+                "name": "__fast_template_storage__",
+                "size": 88055,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/0dabcdc8-a4c6-471b-9cfc-e8932fd83a4f-e603a145-f121-4e0c-9f75-aae1153486ac"
+            },
+            {
+                "_links": {
+                    "self": "/files/110995f9-e61f-46b0-b959-491b6b62c2c7"
+                },
+                "description": "test file",
+                "fileName": "schema_v16_1.json",
+                "hash": "8cc1e16b4e384822beae178ede2a5d7394377c8edc79f6933999a6ca39511115",
+                "id": "110995f9-e61f-46b0-b959-491b6b62c2c7",
+                "name": "test.json",
+                "size": 468740,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/110995f9-e61f-46b0-b959-491b6b62c2c7-93ad218a-5597-4065-a4c8-80116e29ab6e"
+            },
+            {
+                "_links": {
+                    "self": "/files/283091e5-deeb-4c93-9d01-f69698c9aba2"
+                },
+                "description": "",
+                "fileName": "big-ip-next-03.crt",
+                "hash": "b4f0f58d23cb60e003202b39c9e45e54f7ac9b6542cceedfe2f516894444ef8d",
+                "id": "283091e5-deeb-4c93-9d01-f69698c9aba2",
+                "name": "big-ip-next-03_cert",
+                "size": 1278,
+                "type": "CERTIFICATE",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/283091e5-deeb-4c93-9d01-f69698c9aba2-8d5a315c-d2da-452b-8e5c-6ecd74697548"
+            },
+            {
+                "_links": {
+                    "self": "/files/33966d03-c251-402b-bb29-a5b239bdfe17"
+                },
+                "description": "",
+                "fileName": "big-ip-next-03.key",
+                "hash": "acc863f836d365806bc5ca472a1492e1519826acfd36b5ab55313fa3aa897284",
+                "id": "33966d03-c251-402b-bb29-a5b239bdfe17",
+                "name": "big-ip-next-03_key",
+                "size": 1678,
+                "type": "PRIVATE_KEY",
+                "uri": "https://f5-eesv-vault:8200/v1/secrets/files/33966d03-c251-402b-bb29-a5b239bdfe17-71ee825f-aefc-4fcb-8b0e-d222a61ff8f0"
+            },
+            {
+                "_links": {
+                    "self": "/files/39ef2ab7-6acd-480c-9b0b-33c477112a24"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "40a91b7be1f573fe2a7ef149fb9553014c6ab7f16747ae3073048c78e871d5b1",
+                "id": "39ef2ab7-6acd-480c-9b0b-33c477112a24",
+                "name": "tenantn2ZkofguQJa3E3qLjJwgKQ:juice_shop_app:tlsserver_local_cert:certificate",
+                "size": 2687,
+                "type": "CERTIFICATE",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/39ef2ab7-6acd-480c-9b0b-33c477112a24-d8c7c350-f91f-43cc-9473-fb98fb57c8e4"
+            },
+            {
+                "_links": {
+                    "self": "/files/47ffaa4d-9cc3-45dc-8d49-68135ecccde1"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "7e75e98ff65b7a1bab397118a6688a68ffc768d1f38f80e9144d2a408ac494d1",
+                "id": "47ffaa4d-9cc3-45dc-8d49-68135ecccde1",
+                "name": "appsvcs-declaration-1691290349317",
+                "size": 2671,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/47ffaa4d-9cc3-45dc-8d49-68135ecccde1-8309e4f2-2a73-4cdb-bde5-9f9c74b90e94"
+            },
+            {
+                "_links": {
+                    "self": "/files/4da611d2-e44b-4600-a693-b59c1a99bd3c"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "ec9a9e19792ec9e32606d7749c7db4f6092218c6e74801bd6797ac76478389de",
+                "id": "4da611d2-e44b-4600-a693-b59c1a99bd3c",
+                "name": "appsvcs-declaration-1691290367642",
+                "size": 6004,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/4da611d2-e44b-4600-a693-b59c1a99bd3c-d4493784-197d-4da1-806b-882b3d4295e8"
+            },
+            {
+                "_links": {
+                    "self": "/files/68d064cb-41a3-4edb-8d4d-176b2dd81d52"
+                },
+                "description": "",
+                "fileName": "okta_signed_cert.crt",
+                "hash": "f1a1fff77fe72cf92da5ca9aed2cd37a2b17701b45c2a5c2e7190915f30fbaa9",
+                "id": "68d064cb-41a3-4edb-8d4d-176b2dd81d52",
+                "name": "okta_signed_cert.crt",
+                "size": 1318,
+                "type": "CERTIFICATE",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/68d064cb-41a3-4edb-8d4d-176b2dd81d52-ad3c4f2f-f2aa-497e-b215-e4bfd2fee929"
+            },
+            {
+                "_links": {
+                    "self": "/files/87500b3c-5bea-41d0-b859-0ed71e4596a7"
+                },
+                "description": "",
+                "fileName": "ThreatCampaigns_20230801_074816.im",
+                "hash": "602f6db59a63e2a98a732b6bd7f554d1ff54721b984ac0c0631b2efe7446b8df",
+                "id": "87500b3c-5bea-41d0-b859-0ed71e4596a7",
+                "name": "ThreatCampaigns_20230801_074816.im",
+                "size": 636928,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/87500b3c-5bea-41d0-b859-0ed71e4596a7-3985b838-13ee-4cef-858a-15de54b4f203"
+            },
+            {
+                "_links": {
+                    "self": "/files/95dea404-3746-4454-8961-a7e76393310a"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "812a8666a233578506717a2f12ce4a1fc9594acfa1ec3e1338e4fe4eaed428aa",
+                "id": "95dea404-3746-4454-8961-a7e76393310a",
+                "name": "__fast_config_storage__",
+                "size": 264,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/95dea404-3746-4454-8961-a7e76393310a-54fb737d-5b07-40ee-9b78-4944a9d08624"
+            },
+            {
+                "_links": {
+                    "self": "/files/cc222ae1-cbd5-41cc-98e0-322536fec765"
+                },
+                "description": "",
+                "fileName": "self_demo.f5.com.crt",
+                "hash": "40a91b7be1f573fe2a7ef149fb9553014c6ab7f16747ae3073048c78e871d5b1",
+                "id": "cc222ae1-cbd5-41cc-98e0-322536fec765",
+                "name": "self_demo.f5.com.crt",
+                "size": 2687,
+                "type": "CERTIFICATE",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/cc222ae1-cbd5-41cc-98e0-322536fec765-e0a88951-e4bf-43c7-90a0-92b2ef04c347"
+            },
+            {
+                "_links": {
+                    "self": "/files/cd59973b-1715-414d-8878-6bc6406fc35b"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "40a91b7be1f573fe2a7ef149fb9553014c6ab7f16747ae3073048c78e871d5b1",
+                "id": "cd59973b-1715-414d-8878-6bc6406fc35b",
+                "name": "Access:okta_signed_app:okta_signed_app_local_cert:certificate",
+                "size": 2687,
+                "type": "CERTIFICATE",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/cd59973b-1715-414d-8878-6bc6406fc35b-db0404af-8fd1-4f42-8c9e-53263e8c6976"
+            },
+            {
+                "_links": {
+                    "self": "/files/e2a7e7e1-6631-44e7-95b9-722dfd7025e6"
+                },
+                "description": "",
+                "fileName": "BotSignatures_20230803_112003.im",
+                "hash": "34208a658d1e8fe947c4fe082c120994655f18e2d3d894bc5afc0efc8f674fad",
+                "id": "e2a7e7e1-6631-44e7-95b9-722dfd7025e6",
+                "name": "BotSignatures_20230803_112003.im",
+                "size": 583680,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/e2a7e7e1-6631-44e7-95b9-722dfd7025e6-8a61081a-0ea3-4f4f-b142-b74436d63a4d"
+            },
+            {
+                "_links": {
+                    "self": "/files/ecb88070-20b1-47af-be2a-14c9bdcb37ef"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "b280d57637f6b87ed5e2d2eccd3afcbae6aab15c34c429fbfceb7f4d0dd383ac",
+                "id": "ecb88070-20b1-47af-be2a-14c9bdcb37ef",
+                "name": "appsvcs-task-status.json",
+                "size": 7325,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/ecb88070-20b1-47af-be2a-14c9bdcb37ef-1339eb1c-b539-4b86-b479-29518c74d1af"
+            },
+            {
+                "_links": {
+                    "self": "/files/ee2a4882-0ba3-4e11-a4c9-a819819502d3"
+                },
+                "description": "",
+                "fileName": "self_demo.f5.com.pem",
+                "hash": "e82f24b25de7c20e296af5022c629edfd5515a8b1c2bd209b33463d68436c197",
+                "id": "ee2a4882-0ba3-4e11-a4c9-a819819502d3",
+                "name": "self_demo.f5.com.pem",
+                "size": 1679,
+                "type": "PRIVATE_KEY",
+                "uri": "https://f5-eesv-vault:8200/v1/secrets/files/ee2a4882-0ba3-4e11-a4c9-a819819502d3-b37dba36-a063-4938-8b7e-db95a8525cca"
+            },
+            {
+                "_links": {
+                    "self": "/files/efbf2d72-4e57-4d6f-b714-d2d6572a3a45"
+                },
+                "description": "",
+                "fileName": "ASM-AttackSignatures_20230803_194623.im",
+                "hash": "21dc5381c81a7d935e52d5fbd0c2637320c063dca1aead498a95717998a277e8",
+                "id": "efbf2d72-4e57-4d6f-b714-d2d6572a3a45",
+                "name": "ASM-AttackSignatures_20230803_194623.im",
+                "size": 1599488,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/efbf2d72-4e57-4d6f-b714-d2d6572a3a45-f78345d0-58e3-469a-ad12-b57f4a8ae347"
+            },
+            {
+                "_links": {
+                    "self": "/files/f5279a5d-857d-4367-84f3-ba57adfb87d6"
+                },
+                "description": "",
+                "fileName": "",
+                "hash": "034a8bd6ad777c274c003ffe829918838bd51cdfbe68d56e818a4da15db5a519",
+                "id": "f5279a5d-857d-4367-84f3-ba57adfb87d6",
+                "name": "appsvcs-declaration-1691290338347",
+                "size": 1470,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/f5279a5d-857d-4367-84f3-ba57adfb87d6-8e0e09f4-e190-4d91-862c-52c85d288b39"
+            },
+            {
+                "_links": {
+                    "self": "/files/f8b34cdd-d463-4ee7-8906-3fd8da3a261f"
+                },
+                "description": "",
+                "fileName": "juice_shop_policy1691290326037",
+                "hash": "1b2c377b7235cc2676f83321045dd159643f4edc4bc101cf0a7f986a4ed488b7",
+                "id": "f8b34cdd-d463-4ee7-8906-3fd8da3a261f",
+                "name": "juice_shop_policy1691290326037",
+                "size": 75614,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/f8b34cdd-d463-4ee7-8906-3fd8da3a261f-f0cefb7f-d89d-487f-9358-470b0eeb5377"
+            }
+        ]
+    },
+    "_links": {
+        "self": "/files?"
+    },
+    "count": 20,
+    "total": 20
+}

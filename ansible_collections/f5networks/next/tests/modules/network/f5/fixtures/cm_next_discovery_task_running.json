@@ -1,0 +1,15 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/discovery-tasks/174b28cc-ea62-4163-8694-8146336d6a05"
+        }
+    },
+    "created": "2023-08-22T07:25:21.734107Z",
+    "address": "10.1.1.10",
+    "failure_reason": "",
+    "id": "174b28cc-ea62-4163-8694-8146336d6a05",
+    "device_group": "default",
+    "device_user": "admin",
+    "state": "discoveryGetInfo",
+    "status": "running"
+}

@@ -1,0 +1,19 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/backup-tasks/1e5d1fe1-a169-46a4-a08d-0d4c56404dc3"
+        }
+    },
+    "completed": "2023-08-23T08:39:00.962674Z",
+    "created": "2023-08-23T08:37:00.784673Z",
+    "failure_reason": "nats: timeout",
+    "file_name": "ansible_test.tar.gz",
+    "file_path": "storage/backups",
+    "id": "1e5d1fe1-a169-46a4-a08d-0d4c56404dc3",
+    "in_external_storage": false,
+    "instance_id": "6b865131-569d-4b19-a2f9-488cc2b796df",
+    "instance_name": "big-ip-next-04.f5demo.com",
+    "run_id": "",
+    "state": "backupDownloadFileFromInstance",
+    "status": "failed"
+}

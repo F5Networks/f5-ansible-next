@@ -1,0 +1,10 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/files/45320e51-2798-4262-8df9-c3c8925bc783"
+        }
+    },
+    "filename": "simple_test.pdf",
+    "id": "45320e51-2798-4262-8df9-c3c8925bc783",
+    "message": "File uploaded!"
+}

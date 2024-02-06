@@ -1,0 +1,90 @@
+{
+    "_embedded": {
+        "files": [
+            {
+                "_links": {
+                    "self": "/files/132427a1-fba9-4462-a752-7c7cc119d2a2"
+                },
+                "description": "",
+                "fileName": "BotSignatures_20230820_113546.im",
+                "hash": "acd820e0205f3bff1303a56c2c9096d2b6061bcf25f42866e1365509942d1107",
+                "id": "132427a1-fba9-4462-a752-7c7cc119d2a2",
+                "name": "BotSignatures_20230820_113546.im",
+                "size": 585728,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/132427a1-fba9-4462-a752-7c7cc119d2a2-c5a4db5a-0bf9-442c-8002-da0d3157c6ad"
+            },
+            {
+                "_links": {
+                    "self": "/files/3503d634-db70-4875-a577-caba8e62bcf5"
+                },
+                "description": "BIG-IP-Next-20.0.1-2.94.1-patch-21-to-26.7518154-patch.tgz.512.sig",
+                "fileName": "BIG-IP-Next-20.0.1-2.94.1-patch-21-to-26.7518154-patch.tgz.512.sig",
+                "hash": "daa89703b76b7af2c2a12d7f2fc9c698ef80d0f96b1c8b39e83ef18c578af94e",
+                "id": "3503d634-db70-4875-a577-caba8e62bcf5",
+                "name": "BIG-IP-Next-20.0.1-2.94.1-patch-21-to-26.7518154-patch.tgz.512.sig",
+                "size": 512,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/3503d634-db70-4875-a577-caba8e62bcf5-3b3d09d2-3599-4fdf-a14e-bae25a468e08"
+            },
+            {
+                "_links": {
+                    "self": "/files/4df29153-2446-4d34-bcf7-3899431beddc"
+                },
+                "description": "",
+                "fileName": "ASM-AttackSignatures_20230820_161357.im",
+                "hash": "3994864ab25699827405a8a6f37cbbf31b73cbd3f03a78d4f10cbd6e75be6017",
+                "id": "4df29153-2446-4d34-bcf7-3899431beddc",
+                "name": "ASM-AttackSignatures_20230820_161357.im",
+                "size": 1605632,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/4df29153-2446-4d34-bcf7-3899431beddc-3c65fb04-fab5-48d9-bcb7-53a4fb61d915"
+            },
+            {
+                "_links": {
+                    "self": "/files/54390241-feec-4a7d-aa77-2366dda3266a"
+                },
+                "description": "BIG-IP-Next-20.0.1-2.94.1-patch-21-to-26.7518154-patch.tgz",
+                "fileName": "BIG-IP-Next-20.0.1-2.94.1-patch-21-to-26.7518154-patch.tgz",
+                "hash": "66da3f0238cd2d403fa67bdcebf855885ee42c5d74ff36fe8eb3d309f670e2d8",
+                "id": "54390241-feec-4a7d-aa77-2366dda3266a",
+                "name": "BIG-IP-Next-20.0.1-2.94.1-patch-21-to-26.7518154-patch.tgz",
+                "size": 310390192,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/54390241-feec-4a7d-aa77-2366dda3266a-f5328f25-f58e-4d55-95f1-472c5b4e771c"
+            },
+            {
+                "_links": {
+                    "self": "/files/ce6ae4f7-c870-46c2-bfaf-b86ab584758c"
+                },
+                "description": "",
+                "fileName": "ThreatCampaigns_20230820_215045.im",
+                "hash": "21358bae629383d69af7b165b3edfed45c3552f7da6e1eef8f41fa083225557d",
+                "id": "ce6ae4f7-c870-46c2-bfaf-b86ab584758c",
+                "name": "ThreatCampaigns_20230820_215045.im",
+                "size": 636928,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/ce6ae4f7-c870-46c2-bfaf-b86ab584758c-0eb5e3a4-bd34-4e70-b682-8fdadd32092e"
+            },
+            {
+                "_links": {
+                    "self": "/files/facfdcad-853a-48ac-8a79-9998ae1acfce"
+                },
+                "description": "Backup and Restore of the system",
+                "fileName": "2f88fb67-4942-4903-b744-d6192dfa8ea7.2023-09-05.12-30-39.backup.tar.gz.enc",
+                "hash": "e2961dc56a9c654d62b60cdbc1e9773dd22d5a454f391958c922e3d8863c0452",
+                "id": "facfdcad-853a-48ac-8a79-9998ae1acfce",
+                "lastUpdated": "2023-09-05T12:31:13Z",
+                "name": "2f88fb67-4942-4903-b744-d6192dfa8ea7.2023-09-05.12-30-39.backup.tar.gz.enc",
+                "size": 309637280,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/2f88fb67-4942-4903-b744-d6192dfa8ea7.2023-09-05.12-30-39.backup.tar.gz.enc"
+            }
+        ]
+    },
+    "_links": {
+        "self": "/files?"
+    },
+    "count": 6,
+    "total": 6
+}

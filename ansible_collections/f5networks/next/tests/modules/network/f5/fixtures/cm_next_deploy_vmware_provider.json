@@ -1,0 +1,28 @@
+{
+    "_embedded": {
+        "providers": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/providers/vsphere/aec1af9c-cf91-4d2d-9056-c4ea204bb307"
+                    }
+                },
+                "connection": {
+                    "authentication": {
+                        "type": "basic",
+                        "username": "demouser@DOMAIN.CORP.COM"
+                    },
+                    "host": "vsphere-99-vcenter.corpnet.local.net"
+                },
+                "id": "aec1af9c-cf91-4d2d-9056-c4ea204bb307",
+                "name": "myvsphere",
+                "type": "VSPHERE"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/providers/vsphere?filter=name eq %27myvsphere%27"
+        }
+    }
+}

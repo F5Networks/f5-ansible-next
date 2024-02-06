@@ -1,0 +1,30 @@
+{
+    "_embedded": {
+        "devices": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/inventory?filter=hostname+eq+%27myHA%27/a1238f1f-1e23-45ba-bb99-4af3f664bd88"
+                    }
+                },
+                "address": "10.145.66.121",
+                "certificate_validated": "2023-08-29T02:16:07.707749Z",
+                "certificate_validation_error": "tls: failed to verify certificate: x509: cannot validate certificate for 10.145.80.175 because it doesn't contain any IP SANs",
+                "certificate_validity": false,
+                "hostname": "myHA",
+                "id": "a1238f1f-1e23-45ba-bb99-4af3f664bd88",
+                "mode": "HA",
+                "platform_type": "ve",
+                "port": 5443,
+                "version": "20.0.0-2.94.0+0.0.21"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/inventory?filter=hostname+eq+%27myHA%27"
+        }
+    },
+    "count": 1,
+    "total": 1
+}

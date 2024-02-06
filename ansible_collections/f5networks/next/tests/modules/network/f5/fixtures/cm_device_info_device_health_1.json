@@ -1,0 +1,24 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/inventory/a17209c8-eb8a-46b6-ac77-2301ecc74cb9/health"
+        }
+    },
+    "id": "a17209c8-eb8a-46b6-ac77-2301ecc74cb9",
+    "mode": "STANDALONE",
+    "node_count": 1,
+    "nodes": [
+        {
+            "device_id": "a17209c8-eb8a-46b6-ac77-2301ecc74cb9",
+            "machine_id": "d7f02542-6dc6-d857-419c-48d83d0b6907",
+            "system_id": "d7f02542-6dc6-d857-419c-48d83d0b6907",
+            "address": "10.145.77.163",
+            "port": 5443,
+            "hostname": "juniper1.f5net.local",
+            "name": "Default System",
+            "version": "20.0.0-2.94.0+0.0.21",
+            "state": "UNREACHABLE"
+        }
+    ],
+    "status": "UNKNOWN"
+}

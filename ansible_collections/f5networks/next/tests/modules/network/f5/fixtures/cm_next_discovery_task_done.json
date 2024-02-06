@@ -1,0 +1,19 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/discovery-tasks/8ce5e7db-0c1d-4968-b214-72707f3e774f"
+        }
+    },
+    "address": "10.1.1.8",
+    "completed": "2023-08-25T13:51:56.101328Z",
+    "created": "2023-08-25T13:51:53.875524Z",
+    "device_group": "default",
+    "device_user": "admin",
+    "discovered_device_id": "1c99e03b-6baa-4fc9-856f-907795925a6a",
+    "discovered_device_path": "/v1/inventory/1c99e03b-6baa-4fc9-856f-907795925a6a",
+    "failure_reason": "",
+    "id": "8ce5e7db-0c1d-4968-b214-72707f3e774f",
+    "port": 5443,
+    "state": "discoveryDone",
+    "status": "completed"
+}

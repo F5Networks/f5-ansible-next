@@ -1,0 +1,64 @@
+{
+    "_embedded": {
+        "devices": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/inventory/a17209c8-eb8a-46b6-ac77-2301ecc74cb9"
+                    }
+                },
+                "address": "10.145.77.163",
+                "certificate_validated": "2023-08-28T23:16:27.816438Z",
+                "certificate_validation_error": "tls: failed to verify certificate: x509: cannot validate certificate for 10.145.77.163 because it doesn't contain any IP SANs",
+                "certificate_validity": false,
+                "hostname": "juniper1.f5net.local",
+                "id": "a17209c8-eb8a-46b6-ac77-2301ecc74cb9",
+                "mode": "STANDALONE",
+                "platform_type": "ve",
+                "port": 5443,
+                "version": "20.0.0-2.94.0+0.0.21"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/inventory/2f88fb67-4942-4903-b744-d6192dfa8ea7"
+                    }
+                },
+                "address": "10.1.1.11",
+                "certificate_validated": "2023-08-22T04:10:17.632566Z",
+                "certificate_validation_error": "tls: failed to verify certificate: x509: cannot validate certificate for 10.1.1.11 because it doesn't contain any IP SANs",
+                "certificate_validity": false,
+                "hostname": "big-ip-next-04.f5demo.com",
+                "id": "2f88fb67-4942-4903-b744-d6192dfa8ea7",
+                "mode": "STANDALONE",
+                "platform_type": "ve",
+                "port": 5443,
+                "version": "20.0.0-2.94.0+0.0.21"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/inventory/91247525-c243-4ab3-8d17-f2af50da7a7e"
+                    }
+                },
+                "address": "10.1.1.10",
+                "certificate_validated": "2023-08-22T04:09:56.936679Z",
+                "certificate_validation_error": "tls: failed to verify certificate: x509: cannot validate certificate for 10.1.1.10 because it doesn't contain any IP SANs",
+                "certificate_validity": false,
+                "hostname": "big-ip-next-03.f5demo.com",
+                "id": "91247525-c243-4ab3-8d17-f2af50da7a7e",
+                "mode": "STANDALONE",
+                "platform_type": "ve",
+                "port": 5443,
+                "version": "20.0.0-2.94.0+0.0.26"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/inventory"
+        }
+    },
+    "count": 2,
+    "total": 2
+}

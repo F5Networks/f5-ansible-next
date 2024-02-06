@@ -1,0 +1,126 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/instances/tasks/04b4786d-5359-4157-985f-01f56275f109"
+        }
+    },
+    "completed": "2023-10-18T15:20:32.103101Z",
+    "created": "2023-10-18T15:08:26.949575Z",
+    "failure_reason": "",
+    "id": "04b4786d-5359-4157-985f-01f56275f109",
+    "name": "instance creation",
+    "payload": {
+        "discovery": {
+            "port": 5443,
+            "address": "10.146.194.142",
+            "device_user": "admin",
+            "device_password": "*****",
+            "management_user": "admin-cm",
+            "management_password": "*****"
+        },
+        "onboarding": {
+            "mode": "STANDALONE",
+            "nodes": [
+                {
+                    "hostname": "testecosyshyd02",
+                    "password": "*****",
+                    "username": "admin",
+                    "managementAddress": "10.146.194.142"
+                }
+            ],
+            "siteInfo": {
+                "dnsServers": [
+                    "8.8.8.8",
+                    "8.8.4.4"
+                ],
+                "ntpServers": [
+                    "time.google.com",
+                    "time1.google.com"
+                ]
+            },
+            "l1Networks": [
+                {
+                    "name": "LocalTestVLAN-196",
+                    "vlans": [
+                        {
+                            "tag": 123,
+                            "name": "ExtDemoVlan",
+                            "selfIps": [
+                                {
+                                    "address": "192.168.1.2/24"
+                                }
+                            ]
+                        }
+                    ],
+                    "l1Link": {
+                        "name": "1.1",
+                        "linkType": "Interface"
+                    }
+                },
+                {
+                    "name": "LocalTestVLAN-286",
+                    "vlans": [
+                        {
+                            "tag": 456,
+                            "name": "IntDemoVlan",
+                            "selfIps": [
+                                {
+                                    "address": "192.168.2.2/24"
+                                }
+                            ]
+                        }
+                    ],
+                    "l1Link": {
+                        "name": "1.2",
+                        "linkType": "Interface"
+                    }
+                }
+            ],
+            "platformType": "VE"
+        },
+        "instantiation": {
+            "Request": {
+                "F5osRequest": null,
+                "VsphereRequest": {
+                    "provider_id": "aec1af9c-cf91-4d2d-9056-c4ea204bb307",
+                    "provider_type": "vsphere",
+                    "next_instances": [
+                        {
+                            "memory": 16384,
+                            "cluster": "vSAN Cluster",
+                            "num_cpus": 8,
+                            "datastore": "vsanDatastore",
+                            "datacenter": "mbip-7.0",
+                            "sleep_time": "600s",
+                            "resource_pool": "Earthlings",
+                            "mgmt_dns_server": "",
+                            "vsphere_template": "BIG-IP-Next-20.0.1-2.139.10-0.0.136-VM-template",
+                            "bigipnext_vm_name": "testecosyshyd02",
+                            "mgmt_ipv4_address": "10.146.194.142/23",
+                            "mgmt_ipv4_gateway": "10.146.195.254",
+                            "mgmt_network_name": "VM-mgmt",
+                            "bigipnext_vm_password": "*****",
+                            "external_network_name": "LocalTestVLAN-196",
+                            "internal_network_name": "LocalTestVLAN-286",
+                            "vsphere_content_library": "CM-IOD",
+                            "ha_data_plane_network_name": "",
+                            "ha_control_plane_network_name": ""
+                        }
+                    ]
+                }
+            },
+            "BaseTask": {
+                "id": "",
+                "payload": null,
+                "provider_id": "aec1af9c-cf91-4d2d-9056-c4ea204bb307",
+                "provider_type": "vsphere"
+            },
+            "VsphereRequest": null
+        }
+    },
+    "stage": "Discovery",
+    "state": "discoveryDone",
+    "status": "completed",
+    "task_type": "instance_creation",
+    "updated": "2023-10-18T15:20:32.103101Z"
+}

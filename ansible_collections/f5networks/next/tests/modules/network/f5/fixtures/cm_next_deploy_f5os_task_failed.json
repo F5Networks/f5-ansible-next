@@ -1,0 +1,102 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/instances/tasks/4c333b99-625f-4aa3-af83-3d255425e8cc"
+        }
+    },
+    "completed": "2024-01-04T09:39:03.763967Z",
+    "created": "2024-01-04T09:26:55.055604Z",
+    "failure_reason": "unable to login to the instantiated BIG-IP Next instance. This can happen when there is a network configuration error or the RSERIES provider has insufficient resources to start the new virtual machine. Check the network configuration and resource utilization on the provider and try again",
+    "id": "4c333b99-625f-4aa3-af83-3d255425e8cc",
+    "name": "instance creation",
+    "payload": {
+        "discovery": {
+            "port": 5443,
+            "address": "10.144.140.90",
+            "device_user": "admin",
+            "device_password": "*****",
+            "management_user": "admin-cm",
+            "management_password": "*****"
+        },
+        "onboarding": {
+            "mode": "STANDALONE",
+            "nodes": [
+                {
+                    "password": "*****",
+                    "username": "admin",
+                    "managementAddress": "10.144.140.90"
+                }
+            ],
+            "l1Networks": [
+                {
+                    "name": "DefaultL1Network",
+                    "vlans": [
+                        {
+                            "tag": 27,
+                            "name": "test-vln1-27",
+                            "selfIps": []
+                        },
+                        {
+                            "tag": 28,
+                            "name": "test-vln2-28",
+                            "selfIps": []
+                        },
+                        {
+                            "tag": 29,
+                            "name": "test-vln3-29",
+                            "selfIps": []
+                        }
+                    ],
+                    "l1Link": {
+                        "name": "1.1",
+                        "linkType": "Interface"
+                    }
+                }
+            ],
+            "platformType": "RSERIES"
+        },
+        "instantiation": {
+            "Request": {
+                "F5osRequest": {
+                    "provider_id": "d132d3fc-dc14-487f-9313-b793932c2e4a",
+                    "provider_type": "rseries",
+                    "next_instances": [
+                        {
+                            "nodes": [
+                                1
+                            ],
+                            "vlans": [
+                                27,
+                                28,
+                                29
+                            ],
+                            "mgmt_ip": "10.144.140.90",
+                            "timeout": 360,
+                            "hostname": "next.rseries.net",
+                            "cpu_cores": 4,
+                            "disk_size": 20,
+                            "mgmt_prefix": 24,
+                            "mgmt_gateway": "10.144.140.254",
+                            "admin_password": "*****",
+                            "tenant_image_name": "BIG-IP-Next-20.0.1-2.139.10+0.0.136",
+                            "tenant_deployment_file": "BIG-IP-Next-20.0.1-2.139.10+0.0.136.yaml"
+                        }
+                    ]
+                },
+                "VsphereRequest": null
+            },
+            "BaseTask": {
+                "id": "",
+                "payload": null,
+                "provider_id": "d132d3fc-dc14-487f-9313-b793932c2e4a",
+                "provider_type": "rseries"
+            },
+            "VsphereRequest": null
+        }
+    },
+    "stage": "Onboarding",
+    "state": "onboardHandleStandaloneVE",
+    "status": "failed",
+    "task_type": "instance_creation",
+    "updated": "2024-01-04T09:39:03.763967Z"
+}

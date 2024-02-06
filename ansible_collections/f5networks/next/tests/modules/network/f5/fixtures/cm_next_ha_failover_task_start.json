@@ -1,0 +1,8 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/ha-failover-tasks/ac7ddf3f-b696-4acf-8848-30e2db0333bd"
+        }
+    },
+    "path": "/v1/ha-failover-tasks/ac7ddf3f-b696-4acf-8848-30e2db0333bd"
+}

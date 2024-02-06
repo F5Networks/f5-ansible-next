@@ -1,0 +1,28 @@
+{
+    "_embedded": {
+        "providers": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/providers/f5os?filter=name+eq+%27ansible-rseries%27+and+type+eq+RSERIES/d132d3fc-dc14-487f-9313-b793932c2e4a"
+                    }
+                },
+                "connection": {
+                    "authentication": {
+                        "type": "basic",
+                        "username": "admin"
+                    },
+                    "host": "10.144.140.80:8888"
+                },
+                "id": "d132d3fc-dc14-487f-9313-b793932c2e4a",
+                "name": "ansible-rseries",
+                "type": "RSERIES"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/providers/f5os?filter=name eq %27ansible-rseries%27 and type eq RSERIES"
+        }
+    }
+}

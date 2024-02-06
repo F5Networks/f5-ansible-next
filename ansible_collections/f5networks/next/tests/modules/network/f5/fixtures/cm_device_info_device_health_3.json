@@ -1,0 +1,25 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/inventory/91247525-c243-4ab3-8d17-f2af50da7a7e/health"
+        }
+    },
+    "id": "91247525-c243-4ab3-8d17-f2af50da7a7e",
+    "mode": "STANDALONE",
+    "node_count": 1,
+    "nodes": [
+        {
+            "device_id": "91247525-c243-4ab3-8d17-f2af50da7a7e",
+            "machine_id": "d38ea2dc-ac9a-4731-8618-b371d56ffb1d",
+            "system_id": "d38ea2dc-ac9a-4731-8618-b371d56ffb1d",
+            "address": "10.1.1.10",
+            "port": 5443,
+            "hostname": "big-ip-next-03.f5demo.com",
+            "name": "Default System",
+            "version": "20.0.0-2.94.0+0.0.26",
+            "state": "STANDALONE",
+            "isHealthy": true
+        }
+    ],
+    "status": "HEALTHY"
+}

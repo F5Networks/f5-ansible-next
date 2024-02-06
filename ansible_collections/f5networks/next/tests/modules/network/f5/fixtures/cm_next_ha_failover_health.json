@@ -1,0 +1,37 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/inventory/a1238f1f-1e23-45ba-bb99-4af3f664bd88/health"
+        }
+    },
+    "id": "a1238f1f-1e23-45ba-bb99-4af3f664bd88",
+    "mode": "HA",
+    "node_count": 2,
+    "nodes": [
+        {
+            "device_id": "a1238f1f-1e23-45ba-bb99-4af3f664bd88",
+            "machine_id": "6cf12542-2bad-5fee-c27b-4f8c9585ec8f",
+            "system_id": "6cf12542-2bad-5fee-c27b-4f8c9585ec8f",
+            "address": "10.145.80.175",
+            "port": 5443,
+            "hostname": "mbip-1.instances.f5net.local",
+            "name": "Default System",
+            "version": "20.0.0-2.94.0+0.0.21",
+            "state": "ACTIVE",
+            "isHealthy": true
+        },
+        {
+            "device_id": "a1238f1f-1e23-45ba-bb99-4af3f664bd88",
+            "machine_id": "b9092542-be43-6528-21dc-43a99e249a7f",
+            "system_id": "b9092542-be43-6528-21dc-43a99e249a7f",
+            "address": "10.145.74.173",
+            "port": 5443,
+            "hostname": "mbip-2.instances.f5net.local",
+            "name": "Default System",
+            "version": "20.0.0-2.94.0+0.0.21",
+            "state": "STANDBY",
+            "isHealthy": true
+        }
+    ],
+    "status": "HEALTHY"
+}

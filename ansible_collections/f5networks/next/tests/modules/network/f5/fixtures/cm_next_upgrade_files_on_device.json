@@ -1,0 +1,102 @@
+{
+    "_embedded": {
+        "files": [
+            {
+                "_links": {
+                    "self": "/files/263bf3bc-18aa-4616-9004-09b2ee8f2b4b"
+                },
+                "description": "BIG-IP-Next-0.14.0.tgz",
+                "fileName": "BIG-IP-Next-0.14.0.tgz",
+                "hash": "43ed3c709572dc99c725e4af06a0489e9ba42a55e0020e7506d7a648b58924de",
+                "id": "263bf3bc-18aa-4616-9004-09b2ee8f2b4b",
+                "name": "BIG-IP-Next-0.14.0.tgz",
+                "size": 1787563543,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/263bf3bc-18aa-4616-9004-09b2ee8f2b4b-6f5f95cc-b137-489d-80c8-21fde1dbfce4"
+            },
+            {
+                "_links": {
+                    "self": "/files/9e63ca1d-8423-48a6-bc04-4fb41d442ff4"
+                },
+                "description": "",
+                "fileName": "BotSignatures_20230612_164821.im",
+                "hash": "a446cc9183a8486ee0db41535296071cacb7af349b57844a5dcf6845a879f9f3",
+                "id": "9e63ca1d-8423-48a6-bc04-4fb41d442ff4",
+                "name": "BotSignatures_20230612_164821.im",
+                "size": 581632,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/9e63ca1d-8423-48a6-bc04-4fb41d442ff4-71442c75-5947-45cb-b50a-c83340c6cf09"
+            },
+            {
+                "_links": {
+                    "self": "/files/db34f0a0-58e3-4d53-a97f-20a2d7d02550"
+                },
+                "description": "",
+                "fileName": "big-ip-next-04.crt",
+                "hash": "c5d5bc8e912466cf303618f3181bf8f0e44e2236fc12f7368f59cd3fbe0ab7c8",
+                "id": "db34f0a0-58e3-4d53-a97f-20a2d7d02550",
+                "name": "big-ip-next-04_cert",
+                "size": 1278,
+                "type": "CERTIFICATE",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/db34f0a0-58e3-4d53-a97f-20a2d7d02550-ad0d9d06-6812-4617-935f-d206a1d8e431"
+            },
+            {
+                "_links": {
+                    "self": "/files/e85bab29-3989-4412-82a9-2aae55c9d06e"
+                },
+                "description": "",
+                "fileName": "ThreatCampaigns_20230613_124505.im",
+                "hash": "0cc85d4adc95b2af5bcc3e120fe5c8f86c70079ab2e3977276a40a04107be4cb",
+                "id": "e85bab29-3989-4412-82a9-2aae55c9d06e",
+                "name": "ThreatCampaigns_20230613_124505.im",
+                "size": 632832,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/e85bab29-3989-4412-82a9-2aae55c9d06e-5db09444-820b-4e51-a43d-9918c9c13d55"
+            },
+            {
+                "_links": {
+                    "self": "/files/f21ebeae-8413-4744-a47e-5a883b5e69d8"
+                },
+                "description": "",
+                "fileName": "ASM-AttackSignatures_20230615_155312.im",
+                "hash": "bfb14ee6162233ade8ec4b2377da247ebc2b6a05666cbf2be3e7c0a68823a80c",
+                "id": "f21ebeae-8413-4744-a47e-5a883b5e69d8",
+                "name": "ASM-AttackSignatures_20230615_155312.im",
+                "size": 1587200,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/f21ebeae-8413-4744-a47e-5a883b5e69d8-dcdcae7d-bc44-4311-8ea9-9d396333197a"
+            },
+            {
+                "_links": {
+                    "self": "/files/f64b2e2c-c385-401e-8444-83487ddab07f"
+                },
+                "description": "BIG-IP-Next-0.14.0.tgz.512.sig",
+                "fileName": "BIG-IP-Next-0.14.0.tgz.512.sig",
+                "hash": "9f97fc0ca31e7ef9d0d6322baab85d5997d842ccd2fa947eb20de53535e29717",
+                "id": "f64b2e2c-c385-401e-8444-83487ddab07f",
+                "name": "BIG-IP-Next-0.14.0.tgz.512.sig",
+                "size": 512,
+                "type": "GENERIC",
+                "uri": "file://opt/f5/mbip/subsystem/csm/shared/persisted/files/f64b2e2c-c385-401e-8444-83487ddab07f-4bd1457d-c3fe-46ed-8563-a1a9398938ed"
+            },
+            {
+                "_links": {
+                    "self": "/files/f99ac162-0351-4d4f-a354-760327272ca9"
+                },
+                "description": "",
+                "fileName": "big-ip-next-04.key",
+                "hash": "e7185f367700eff98caa1993ad52c24c58da7027f313330ec8c3c61c8348af52",
+                "id": "f99ac162-0351-4d4f-a354-760327272ca9",
+                "name": "big-ip-next-04_key",
+                "size": 1678,
+                "type": "PRIVATE_KEY",
+                "uri": "https://f5-eesv-vault:8200/v1/secrets/files/f99ac162-0351-4d4f-a354-760327272ca9-5f84d321-4f8d-40f3-9fbf-2f1cb9e3cd21"
+            }
+        ]
+    },
+    "_links": {
+        "self": "/files?"
+    },
+    "count": 7,
+    "total": 7
+}

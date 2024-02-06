@@ -1,0 +1,126 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/instances/tasks/98ad7355-210c-4aed-bf02-39dcbf2a6588"
+        }
+    },
+    "completed": "2023-10-16T06:47:12.211061Z",
+    "created": "2023-10-16T06:45:31.421785Z",
+    "failure_reason": "400 Bad Request: {\"type\":\"com.vmware.vapi.std.errors.already_exists\",\"value\":{\"error_type\":\"ALREADY_EXISTS\",\"messages\":[{\"args\":[\"VirtualMachine\",\"test-vm\"],\"default_message\":\"An object of type \\\"VirtualMachine\\\" named \\\"test-vm\\\" already exists.\",\"id\":\"com.vmware.vdcs.util.duplicate_name\"}]}}",
+    "id": "98ad7355-210c-4aed-bf02-39dcbf2a6588",
+    "name": "instance creation",
+    "payload": {
+        "discovery": {
+            "port": 5443,
+            "address": "10.146.194.142",
+            "device_user": "admin",
+            "device_password": "*****",
+            "management_user": "admin-cm",
+            "management_password": "*****"
+        },
+        "onboarding": {
+            "mode": "STANDALONE",
+            "nodes": [
+                {
+                    "hostname": "test-vm",
+                    "password": "*****",
+                    "username": "admin",
+                    "managementAddress": "10.146.194.142"
+                }
+            ],
+            "siteInfo": {
+                "dnsServers": [
+                    "8.8.8.8"
+                ],
+                "ntpServers": [
+                    "192.168.1.1"
+                ]
+            },
+            "l1Networks": [
+                {
+                    "name": "LocalTestVLAN-196",
+                    "vlans": [
+                        {
+                            "tag": 196,
+                            "name": "ext",
+                            "selfIps": [
+                                {
+                                    "address": "192.168.1.1/24",
+                                    "deviceName": "testing-ext"
+                                }
+                            ]
+                        }
+                    ],
+                    "l1Link": {
+                        "name": "1.1",
+                        "linkType": "Interface"
+                    }
+                },
+                {
+                    "name": "LocalTestVLAN-286",
+                    "vlans": [
+                        {
+                            "tag": 286,
+                            "name": "int",
+                            "selfIps": [
+                                {
+                                    "address": "192.168.2.1/24",
+                                    "deviceName": "testing-int"
+                                }
+                            ]
+                        }
+                    ],
+                    "l1Link": {
+                        "name": "1.2",
+                        "linkType": "Interface"
+                    }
+                }
+            ],
+            "platformType": "VE"
+        },
+        "instantiation": {
+            "Request": {
+                "F5osRequest": null,
+                "VsphereRequest": {
+                    "provider_id": "aec1af9c-cf91-4d2d-9056-c4ea204bb307",
+                    "provider_type": "vsphere",
+                    "next_instances": [
+                        {
+                            "memory": 16384,
+                            "cluster": "vSAN Cluster",
+                            "num_cpus": 8,
+                            "datastore": "vsanDatastore",
+                            "datacenter": "mbip-7.0",
+                            "sleep_time": "600s",
+                            "resource_pool": "Earthlings",
+                            "mgmt_dns_server": "",
+                            "vsphere_template": "BIG-IP-Next-20.0.1-2.139.10-0.0.136-VM-template",
+                            "bigipnext_vm_name": "test-vm",
+                            "mgmt_ipv4_address": "10.146.194.142/23",
+                            "mgmt_ipv4_gateway": "10.146.195.254",
+                            "mgmt_network_name": "VM-mgmt",
+                            "bigipnext_vm_password": "*****",
+                            "external_network_name": "LocalTestVLAN-196",
+                            "internal_network_name": "LocalTestVLAN-286",
+                            "vsphere_content_library": "CM-IOD",
+                            "ha_data_plane_network_name": "",
+                            "ha_control_plane_network_name": ""
+                        }
+                    ]
+                }
+            },
+            "BaseTask": {
+                "id": "",
+                "payload": null,
+                "provider_id": "aec1af9c-cf91-4d2d-9056-c4ea204bb307",
+                "provider_type": "vsphere"
+            },
+            "VsphereRequest": null
+        }
+    },
+    "stage": "Instantiation",
+    "state": "instantiateInstances",
+    "status": "failed",
+    "task_type": "instance_creation",
+    "updated": "2023-10-16T06:47:12.211061Z"
+}

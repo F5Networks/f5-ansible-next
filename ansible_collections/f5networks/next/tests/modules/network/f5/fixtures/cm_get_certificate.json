@@ -1,0 +1,30 @@
+{
+    "_embedded": {
+        "certificates": [
+            {
+                "cert": {
+                    "fingerprint": "c28d6fd18ccb057cee41ff36b37be31eb445668419a7f5f062ea58866",
+                    "checksum": "6f3e6a4a4d5fe148c173408be61199cbdb74b64ad53198ec463ab28c5",
+                    "public_key_type": "RSA"
+                },
+                "key": {
+                    "fingerprint": "c28d6fd18ccb057cee41ff36b37be31eb445668419a7f5f062ea58866",
+                    "checksum": "99cbdb74b64ad53198ec463ab28c56f3e6a4a4d5fe148c173408be611",
+                    "passphrase": "key_password_hsm_id"
+                },
+                "id": "859d0bf0-0d6e-40dd-8504-809a4bb3b8ce",
+                "issuer": "Self",
+                "key_type": "RSA",
+                "key_size": 2048,
+                "locality": [
+                    "Tel"
+                ],
+                "common_name": "test.example.com",
+                "duration_in_days": 365,
+                "name": "testcert"
+            }
+        ]
+    },
+    "count": 1,
+    "total": 1
+}

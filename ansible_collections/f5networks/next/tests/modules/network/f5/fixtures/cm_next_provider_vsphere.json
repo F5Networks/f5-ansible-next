@@ -1,0 +1,28 @@
+{
+    "_embedded": {
+        "providers": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/v1/providers/vsphere/11dd5013-b62a-4898-bcca-6e425ad23f7c"
+                    }
+                },
+                "connection": {
+                    "authentication": {
+                        "type": "basic",
+                        "username": "admin"
+                    },
+                    "host": "dummy.host.net"
+                },
+                "id": "11dd5013-b62a-4898-bcca-6e425ad23f7c",
+                "name": "ansible-vsphere",
+                "type": "VSPHERE"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/v1/providers/vsphere?filter=name eq %27ansible-vsphere%27"
+        }
+    }
+}

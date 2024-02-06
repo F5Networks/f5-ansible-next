@@ -1,0 +1,8 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/upgrade-tasks/db3e1e62-1013-40fc-b938-89044c805ee9"
+        }
+    },
+    "path": "/v1/upgrade-tasks/db3e1e62-1013-40fc-b938-89044c805ee9"
+}

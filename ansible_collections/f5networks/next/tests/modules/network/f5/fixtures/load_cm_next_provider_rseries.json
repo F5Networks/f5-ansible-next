@@ -1,0 +1,17 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/providers/f5os/e2f21bcf-4687-4d47-86ee-d593b84aa8a1"
+        }
+    },
+    "connection": {
+        "authentication": {
+            "type": "basic",
+            "username": "admin"
+        },
+        "host": "10.144.140.80:8888"
+    },
+    "id": "e2f21bcf-4687-4d47-86ee-d593b84aa8a1",
+    "name": "ansible-f5os",
+    "type": "RSERIES"
+}

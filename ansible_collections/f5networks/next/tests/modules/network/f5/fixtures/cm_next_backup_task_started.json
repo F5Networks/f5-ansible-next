@@ -1,0 +1,8 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/backup-tasks/8c7d63ed-304c-4e3a-9481-b1cbaf8025e5"
+        }
+    },
+    "path": "/v1/backup-tasks/8c7d63ed-304c-4e3a-9481-b1cbaf8025e5"
+}

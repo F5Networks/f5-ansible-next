@@ -1,0 +1,15 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/restore-tasks/70199b0c-74de-42bf-be74-d386fa179ce1"
+        }
+    },
+    "created": "2023-08-22T08:00:06.46489Z",
+    "file_name": "backup_from_api.tar.gz",
+    "id": "70199b0c-74de-42bf-be74-d386fa179ce1",
+    "in_external_storage": false,
+    "instance_id": "7ffcf978-4800-428d-896c-96e9535342e5",
+    "instance_name": "big-ip-next-03.f5demo.com",
+    "state": "restoreWaitForUploadJob",
+    "status": "running"
+}

@@ -1,0 +1,17 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/ha-failover-tasks/ac7ddf3f-b696-4acf-8848-30e2db0333bd"
+        }
+    },
+    "completed": "2023-08-29T12:28:11.964156Z",
+    "created": "2023-08-29T12:26:36.880981Z",
+    "failure_reason": "",
+    "id": "ac7ddf3f-b696-4acf-8848-30e2db0333bd",
+    "instance_id": "a1238f1f-1e23-45ba-bb99-4af3f664bd88",
+    "name": "force failover for instance a1238f1f-1e23-45ba-bb99-4af3f664bd88",
+    "state": "haFailoverDone",
+    "status": "completed",
+    "task_type": "instance_ha_failover",
+    "updated": "2023-08-29T12:28:11.964156Z"
+}

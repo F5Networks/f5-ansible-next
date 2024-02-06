@@ -1,0 +1,80 @@
+{
+    "_links": {
+        "self": {
+            "href": "/v1/ha-creation-tasks/b04f6d15-905e-4077-8e87-74688aa75def"
+        }
+    },
+    "active_instance_id": "a3cad23c-859e-4053-ba4c-5069bc0b03b7",
+    "auto_failback": false,
+    "cluster_management_ip": "10.146.168.20",
+    "cluster_name": "wojciechecosyshydha",
+    "control_plane_vlan": {
+        "tag": 100,
+        "name": "ha-cp-vlan"
+    },
+    "created": "2023-11-08T16:23:51.664089Z",
+    "data_plane_vlan": {
+        "tag": 101,
+        "name": "ha-dp-vlan",
+        "NetworkInterface": "1.3"
+    },
+    "id": "b04f6d15-905e-4077-8e87-74688aa75def",
+    "name": "create HA from a3cad23c-859e-4053-ba4c-5069bc0b03b7",
+    "nodes": [
+        {
+            "name": "active-node",
+            "control_plane_address": "10.146.168.21/16",
+            "data_plane_primary_address": "10.3.0.10/16",
+            "data_plane_secondary_address": ""
+        },
+        {
+            "name": "standby-node",
+            "control_plane_address": "10.146.168.22/16",
+            "data_plane_primary_address": "10.3.0.11/16",
+            "data_plane_secondary_address": ""
+        }
+    ],
+    "standby_instance_id": "1fed35b2-914e-46c0-83b1-d76531570aa8",
+    "state": "haCreateCluster",
+    "status": "running",
+    "task_type": "instance_ha_creation",
+    "traffic_vlan": [
+        {
+            "name": "external-ha-vlan",
+            "selfIps": [
+                {
+                    "address": "10.3.0.20/16",
+                    "deviceName": "FLOATING-IP"
+                },
+                {
+                    "address": "10.3.0.21/16",
+                    "deviceName": "ACTIVE-NODE"
+                },
+                {
+                    "address": "10.3.0.22/16",
+                    "deviceName": "STANDBY-NODE"
+                }
+            ],
+            "networkName": "LocalTestVLAN-115"
+        },
+        {
+            "name": "internal-ha-vlan",
+            "selfIps": [
+                {
+                    "address": "10.3.0.30/16",
+                    "deviceName": "FLOATING-IP"
+                },
+                {
+                    "address": "10.3.0.31/16",
+                    "deviceName": "ACTIVE-NODE"
+                },
+                {
+                    "address": "10.3.0.32/16",
+                    "deviceName": "STANDBY-NODE"
+                }
+            ],
+            "networkName": "LocalTestVLAN-114"
+        }
+    ],
+    "updated": "2023-11-08T16:23:56.712766Z"
+}
