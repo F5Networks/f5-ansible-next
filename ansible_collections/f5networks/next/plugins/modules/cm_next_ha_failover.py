@@ -47,30 +47,17 @@ author:
 '''
 
 EXAMPLES = r'''
-- hosts: all
-  collections:
-    - f5networks.next
-  connection: httpapi
+- name: Failover HA pair using IP address
+  cm_next_ha_failover:
+    ha_ip: "172.16.2.1"
+    active_unit_ip: "172.16.1.1"
+    timeout: 600
 
-  vars:
-    ansible_host: "lb.mydomain.com"
-    ansible_user: "admin"
-    ansible_httpapi_password: "secret"
-    ansible_network_os: f5networks.next.cm
-    ansible_httpapi_use_ssl: yes
-
-  tasks:
-    - name: Failover HA pair using IP address
-      cm_next_ha_failover:
-        ha_ip: "172.16.2.1"
-        active_unit_ip: "172.16.1.1"
-        timeout: 600
-
-    - name: Failover HA pair using hostname and ip
-      cm_next_ha_failover:
-        ha_hostname: "foo.bar.net"
-        active_unit_ip: "172.16.1.1"
-        timeout: 600
+- name: Failover HA pair using hostname and ip
+  cm_next_ha_failover:
+    ha_hostname: "foo.bar.net"
+    active_unit_ip: "172.16.1.1"
+    timeout: 600
 '''
 
 RETURN = r'''

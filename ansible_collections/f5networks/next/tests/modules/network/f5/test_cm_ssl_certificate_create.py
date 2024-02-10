@@ -71,8 +71,6 @@ class TestParameters(unittest.TestCase):
         self.assertListEqual(p.province, ['Hyd'])
         self.assertEqual(p.email, ['r@fx.com'])
         self.assertEqual(p.key_type, 'ECDSA')
-        self.assertEqual(p.key_curve_name, 'prime256v1')
-        self.assertEqual(p.key_security_type, 'Password')
         self.assertEqual(p.key_passphrase, 'test123')
 
     def test_module_parameters_password_exception(self):
@@ -82,9 +80,6 @@ class TestParameters(unittest.TestCase):
         )
 
         p = ModuleParameters(params=args)
-
-        self.assertEqual(p.key_security_type, 'Password')
-        self.assertEqual(p.key_curve_name, 'prime256v1')
 
         with self.assertRaises(F5ModuleError) as err:
             p.key_passphrase
@@ -112,6 +107,9 @@ class TestManager(unittest.TestCase):
         self.p1 = patch('ansible_collections.f5networks.next.plugins.modules.cm_ssl_certificate_create.F5Client')
         self.m1 = self.p1.start()
         self.m1.return_value = MagicMock()
+        self.p2 = patch('ansible_collections.f5networks.next.plugins.modules.cm_ssl_certificate_create.sanitize_sensitive_data')
+        self.m2 = self.p2.start()
+        self.m2.return_value = Mock()
         self.mock_module_helper = patch.multiple(AnsibleModule,
                                                  exit_json=exit_json,
                                                  fail_json=fail_json)
@@ -119,6 +117,7 @@ class TestManager(unittest.TestCase):
 
     def tearDown(self):
         self.p1.stop()
+        self.p2.stop()
         self.mock_module_helper.stop()
 
     def test_create(self, *args):
@@ -275,6 +274,8 @@ class TestManager(unittest.TestCase):
             name="foobar",
             key_type='ECDSA',
             key_security_type='Password',
+            duration_in_days=30,
+            common_name='foo.org',
             key_passphrase='test123',
             state='present'
         ))
@@ -300,6 +301,7 @@ class TestManager(unittest.TestCase):
         self.assertIn('server error', err1.exception.args[0])
 
         with self.assertRaises(F5ModuleError) as err2:
+            mm._set_changed_options()
             mm.create_on_device()
         self.assertIn('server error', err2.exception.args[0])
 

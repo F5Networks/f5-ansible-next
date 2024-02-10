@@ -471,13 +471,13 @@ class ModuleManager(object):
             params['issuer'] = 'Self'
         if self.want.key_type is None:
             params['key_type'] = 'RSA'
-        if self.want.key_size is None and params['key_type'] == 'RSA':
+        if self.want.key_size is None and params.get('key_type') == 'RSA':
             params['key_size'] = 2048
-        if self.want.key_curve_name is None and params['key_type'] == 'ECDSA':
+        if self.want.key_curve_name is None and params.get('key_type') == 'ECDSA':
             params['key_curve_name'] = 'prime256v1'
         if self.want.key_security_type is None:
             params['key_security_type'] = 'Password'
-        if params['key_security_type'] == 'Password':
+        if params.get('key_security_type') == 'Password':
             params['key_passphrase'] = self.want.key_passphrase
         if self.want.duration_in_days is None:
             raise F5ModuleError(
@@ -500,9 +500,9 @@ class ModuleManager(object):
             params['duration_in_days'] = self.have.duration_in_days
         if self.changes.key_type is None:
             params['key_type'] = self.have.key_type
-        if self.changes.key_size is None and params['key_type'] == 'RSA':
+        if self.changes.key_size is None and params.get('key_type') == 'RSA':
             params['key_size'] = self.have.key_size
-        if self.changes.key_curve_name is None and params['key_type'] == 'ECDSA':
+        if self.changes.key_curve_name is None and params.get('key_type') == 'ECDSA':
             params['key_curve_name'] = self.have.key_curve_name
         if self.changes.key_security_type is None:
             params['key_security_type'] = self.have.key_security_type
@@ -539,7 +539,7 @@ class ModuleManager(object):
         if response['code'] not in [200, 201, 202]:
             raise F5ModuleError(response['contents'])
 
-        self.log_message("Certificate created successfuly")
+        self.log_message("Certificate created successfully")
         return True
 
     def update_on_device(self):

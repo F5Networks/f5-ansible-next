@@ -42,35 +42,22 @@ author:
 '''
 
 EXAMPLES = r'''
-- hosts: all
-  collections:
-    - f5networks.f5os
-  connection: httpapi
+- name: Collect users and files information on CM device
+  cm_device_info:
+    gather_subset:
+      - users
+      - files
 
-  vars:
-    ansible_host: "lb.mydomain.com"
-    ansible_user: "admin"
-    ansible_httpapi_password: "secret"
-    ansible_network_os: f5networks.f5os.f5os
-    ansible_httpapi_use_ssl: yes
+- name: Collect all CM device information
+  cm_device_info:
+    gather_subset:
+      - all
 
-  tasks:
-    - name: Collect users and files information on CM device
-      cm_device_info:
-        gather_subset:
-          - users
-          - files
-
-    - name: Collect all CM device information
-      cm_device_info:
-        gather_subset:
-          - all
-
-    - name: Collect all CM device information except managed-devices
-      cm_device_info:
-        gather_subset:
-          - all
-          - "!managed-devices"
+- name: Collect all CM device information except managed-devices
+  cm_device_info:
+    gather_subset:
+      - all
+      - "!managed-devices"
 '''
 
 RETURN = r'''

@@ -69,48 +69,35 @@ author:
 
 
 EXAMPLES = r'''
-- hosts: all
-  collections:
-    - f5networks.next
-  connection: httpapi
+- name: Backup Next instance
+  cm_next_backup_restore:
+    device_ip: "127.1.1.1"
+    filename: "ansible_test.tar.gz"
+    file_password: "pass123!"
+    state: backup
+    timeout: 600
 
-  vars:
-    ansible_host: "lb.mydomain.com"
-    ansible_user: "admin"
-    ansible_httpapi_password: "secret"
-    ansible_network_os: f5networks.next.cm
-    ansible_httpapi_use_ssl: yes
+- name: Backup a file - force on
+  cm_next_backup_restore:
+    device_ip: "127.1.1.1"
+    filename: "ansible_test.tar.gz"
+    file_password: "pass123!"
+    state: backup
+    force: "yes"
+    timeout: 600
 
-  tasks:
-    - name: Backup Next instance
-      cm_next_backup_restore:
-        device_ip: "127.1.1.1"
-        filename: "ansible_test.tar.gz"
-        file_password: "pass123!"
-        state: backup
-        timeout: 600
+- name: Restore Next instance
+  cm_next_backup_restore:
+    device_ip: "127.1.1.1"
+    filename: "ansible_test.tar.gz"
+    file_password: "pass123!"
+    state: restore
+    timeout: 600
 
-    - name: Backup a file - force on
-      cm_next_backup_restore:
-        device_ip: "127.1.1.1"
-        filename: "ansible_test.tar.gz"
-        file_password: "pass123!"
-        state: backup
-        force: "yes"
-        timeout: 600
-
-    - name: Restore Next instance
-      cm_next_backup_restore:
-        device_ip: "127.1.1.1"
-        filename: "ansible_test.tar.gz"
-        file_password: "pass123!"
-        state: restore
-        timeout: 600
-
-    - name: Remove a file
-      cm_next_backup_restore:
-        filename: "/path/to/file/file.json"
-        state: absent
+- name: Remove a file
+  cm_next_backup_restore:
+    filename: "/path/to/file/file.json"
+    state: absent
 '''
 
 RETURN = r'''

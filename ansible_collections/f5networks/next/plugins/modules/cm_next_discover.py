@@ -73,47 +73,34 @@ author:
 '''
 
 EXAMPLES = r'''
-- hosts: all
-  collections:
-    - f5networks.next
-  connection: httpapi
+- name: Add Next instance
+  cm_next_discover:
+    device_ip: "10.1.1.8"
+    device_port: 5443
+    device_user: "admin"
+    device_password: "Welcome123!"
+    mgmt_user: 'admin-cm'
+    mgmt_password: "Welcome123!"
+    timeout: 600
 
-  vars:
-    ansible_host: "lb.mydomain.com"
-    ansible_user: "admin"
-    ansible_httpapi_password: "secret"
-    ansible_network_os: f5networks.next.cm
-    ansible_httpapi_use_ssl: yes
+- name: Add Next instance - force on
+  cm_next_discover:
+    device_ip: "10.1.1.8"
+    device_port: 5443
+    device_user: "admin"
+    device_password: "Welcome123!"
+    mgmt_user: 'admin-cm'
+    mgmt_password: "Welcome123!"
+    timeout: 600
+    force: true
 
-  tasks:
-    - name: Add Next instance
-      cm_next_discover:
-        device_ip: "10.1.1.8"
-        device_port: 5443
-        device_user: "admin"
-        device_password: "Welcome123!"
-        mgmt_user: 'admin-cm'
-        mgmt_password: "Welcome123!"
-        timeout: 600
-
-    - name: Add Next instance - force on
-      cm_next_discover:
-        device_ip: "10.1.1.8"
-        device_port: 5443
-        device_user: "admin"
-        device_password: "Welcome123!"
-        mgmt_user: 'admin-cm'
-        mgmt_password: "Welcome123!"
-        timeout: 600
-        force: true
-
-    - name: Remove Next Instance
-      cm_next_discover:
-        device_ip: "10.1.1.8"
-        device_user: "admin"
-        device_password: "Welcome123!"
-        state: 'absent'
-        timeout: 600
+- name: Remove Next Instance
+  cm_next_discover:
+    device_ip: "10.1.1.8"
+    device_user: "admin"
+    device_password: "Welcome123!"
+    state: 'absent'
+    timeout: 600
 '''
 
 RETURN = r'''

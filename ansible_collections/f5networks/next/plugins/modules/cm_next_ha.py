@@ -501,11 +501,11 @@ class ModuleManager(object):
         if response['contents']['count'] == 1:
             if response['contents']['_embedded']['devices'][0]['mode'] == 'STANDALONE':
                 self.log_message(
-                    f"Specified HA Cluster IP address is in use by a STANDALONE instance: {self.want.ha_ip }",
+                    f"Specified HA Cluster IP address is in use by a STANDALONE instance: {self.want.ha_ip}",
                     'error'
                 )
                 raise F5ModuleError(
-                    f"Specified HA Cluster IP address is in use by a STANDALONE instance: {self.want.ha_ip }.")
+                    f"Specified HA Cluster IP address is in use by a STANDALONE instance: {self.want.ha_ip}.")
             if response['contents']['_embedded']['devices'][0]['mode'] == 'HA':
                 self.log_message(f"Found HA cluster: {self.want.ha_ip}")
                 return True

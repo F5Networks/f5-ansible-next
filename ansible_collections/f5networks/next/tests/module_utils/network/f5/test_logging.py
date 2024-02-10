@@ -32,7 +32,7 @@ class TestCustomFormatter(unittest.TestCase):
 
 class TestReturnLogger(unittest.TestCase):
     def test_return_logger(self):
-        logger = return_logger()
+        logger = return_logger('test-mod')
         self.assertIsInstance(logger, logging.Logger)
 
 

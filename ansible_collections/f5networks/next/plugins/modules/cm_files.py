@@ -53,35 +53,22 @@ author:
 '''
 
 EXAMPLES = r'''
-- hosts: all
-  collections:
-    - f5networks.next
-  connection: httpapi
+- name: Upgrade Next instance
+  cm_files:
+    filename: "/path/to/file/file.json"
+    description: "some file"
+    timeout: 600
 
-  vars:
-    ansible_host: "lb.mydomain.com"
-    ansible_user: "admin"
-    ansible_httpapi_password: "secret"
-    ansible_network_os: f5networks.next.cm
-    ansible_httpapi_use_ssl: yes
+- name: Upload a file - force on
+  cm_files:
+    filename: "/path/to/file/file.json"
+    description: "some file"
+    force: "yes"
 
-  tasks:
-    - name: Upgrade Next instance
-      cm_files:
-        filename: "/path/to/file/file.json"
-        description: "some file"
-        timeout: 600
-
-    - name: Upload a file - force on
-      cm_files:
-        filename: "/path/to/file/file.json"
-        description: "some file"
-        force: "yes"
-
-    - name: Remove a file
-      cm_files:
-        filename: "/path/to/file/file.json"
-        state: absent
+- name: Remove a file
+  cm_files:
+    filename: "/path/to/file/file.json"
+    state: absent
 '''
 
 RETURN = r'''

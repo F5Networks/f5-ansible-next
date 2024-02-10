@@ -56,25 +56,12 @@ author:
 '''
 
 EXAMPLES = r'''
-- hosts: all
-  collections:
-    - f5networks.next
-  connection: httpapi
-
-  vars:
-    ansible_host: "lb.mydomain.com"
-    ansible_user: "admin"
-    ansible_httpapi_password: "secret"
-    ansible_network_os: f5networks.next.cm
-    ansible_httpapi_use_ssl: yes
-
-  tasks:
-    - name: Upgrade Next instance
-      cm_next_upgrade:
-        device_ip: "10.1.1.11"
-        filename: "BIG-IP-Next-0.14.0-2.45.3+0.0.24.tgz"
-        sig_filename: "BIG-IP-Next-0.14.0-2.45.3+0.0.24.tgz.512.sig"
-        timeout: 600
+- name: Upgrade Next instance
+  cm_next_upgrade:
+    device_ip: "10.1.1.11"
+    filename: "BIG-IP-Next-0.14.0-2.45.3+0.0.24.tgz"
+    sig_filename: "BIG-IP-Next-0.14.0-2.45.3+0.0.24.tgz.512.sig"
+    timeout: 600
 '''
 
 RETURN = r'''
@@ -284,7 +271,7 @@ class ModuleManager(object):
             )
             raise F5ModuleError(
                 f"Query returned more than 1 device with the specified property: "
-                f"{ self.want.device_ip if self.want.device_ip else self.want.device_hostname} "
+                f"{self.want.device_ip if self.want.device_ip else self.want.device_hostname} "
             )
 
     def list_files_on_target_device(self):

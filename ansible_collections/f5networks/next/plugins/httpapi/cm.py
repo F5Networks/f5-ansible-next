@@ -105,9 +105,7 @@ class HttpApi(HttpApiBase):
 
     def token_refresh(self):
         payload = {
-            'refresh_token': {
-                self.refresh_token
-            }
+            'refresh_token': self.refresh_token
         }
         response = self.send_request(
             path="/api/token-refresh", method='POST', payload=payload, headers=BASE_HEADERS

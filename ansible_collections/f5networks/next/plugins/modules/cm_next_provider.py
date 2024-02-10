@@ -72,55 +72,42 @@ author:
 '''
 
 EXAMPLES = r'''
-- hosts: all
-  collections:
-    - f5networks.next
-  connection: httpapi
+- name: Create a vsphere provider
+  cm_next_provider:
+    name: "ansible-vsphere"
+    type: "vsphere"
+    address: "dummy.host.net"
+    username: "admin"
+    password: "test"
 
-  vars:
-    ansible_host: "lb.mydomain.com"
-    ansible_user: "admin"
-    ansible_httpapi_password: "secret"
-    ansible_network_os: f5networks.next.cm
-    ansible_httpapi_use_ssl: yes
+- name: Create an F5OS provider
+  cm_next_provider:
+    name: "ansible-f5os"
+    type: "rseries"
+    address: "192.168.1.1"
+    port: 8888
+    username: "admin"
+    password: "test"
 
-  tasks:
-    - name: Create a vsphere provider
-      cm_next_provider:
-        name: "ansible-vsphere"
-        type: "vsphere"
-        address: "dummy.host.net"
-        username: "admin"
-        password: "test"
+- name: Update a username on provider
+  cm_next_provider:
+    name: "ansible-f5os"
+    type: "rseries"
+    username: "non-admin"
+    password: "test"
 
-    - name: Create an F5OS provider
-      cm_next_provider:
-        name: "ansible-f5os"
-        type: "rseries"
-        address: "192.168.1.1"
-        port: 8888
-        username: "admin"
-        password: "test"
+- name: Update a password on a provider - force on
+  cm_next_provider:
+    name: "ansible-f5os"
+    type: "rseries"
+    password: "changed"
+    force: "yes"
 
-    - name: Update a username on provider
-      cm_next_provider:
-        name: "ansible-f5os"
-        type: "rseries"
-        username: "non-admin"
-        password: "test"
-
-    - name: Update a password on a provider - force on
-      cm_next_provider:
-        name: "ansible-f5os"
-        type: "rseries"
-        password: "changed"
-        force: "yes"
-
-    - name: Remove a vsphere provider
-      cm_next_provider:
-        name: "ansible-vsphere"
-        type: "vsphere"
-        state: "absent"
+- name: Remove a vsphere provider
+  cm_next_provider:
+    name: "ansible-vsphere"
+    type: "vsphere"
+    state: "absent"
 '''
 
 RETURN = r'''

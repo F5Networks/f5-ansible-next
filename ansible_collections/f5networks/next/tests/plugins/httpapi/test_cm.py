@@ -180,8 +180,9 @@ class TestNextHttpapi(TestCase):
 
         self.connection.httpapi.logout()
         self.assertTrue(self.connection.send.call_args[0][0] == '/api/logout')
+        self.assertTrue(self.connection.send.call_args[0][1] == '{}')
         self.assertTrue(self.connection.send.call_args[1] == dict(
-            method='POST', data={}, headers={'Content-Type': 'application/json'}
+            method='POST', headers={'Content-Type': 'application/json'}
         ))
 
     def test_handle_http_error(self):
@@ -230,7 +231,9 @@ class TestNextHttpapi(TestCase):
 
     def test_send_multipart(self):
         mock_uri = '/foo/bar/baz/a23dfdf454546dfgs'
-        mock_form = {'content': {'filename': 'fixtures/fake_file_upload.json'}, 'file_name': 'test.txt'}
+        mock_form = {'content': {'filename': os.path.join(fixture_path, 'fake_file_upload.json')},
+                     'file_name': 'test.txt'
+                     }
         self.connection.send.side_effect = [
             connection_response(load_fixture('fake_file_upload.json')),
             HTTPError(
