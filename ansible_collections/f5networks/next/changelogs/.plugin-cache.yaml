@@ -1,0 +1,88 @@
+objects:
+  role: {}
+plugins:
+  become: {}
+  cache: {}
+  callback: {}
+  cliconf: {}
+  connection: {}
+  filter: {}
+  httpapi:
+    cm:
+      description: HttpApi Plugin for CM NEXT devices
+      name: cm
+      version_added: 1.0.0
+  inventory: {}
+  lookup: {}
+  module:
+    cm_device_info:
+      description: Collect information from CM devices
+      name: cm_device_info
+      namespace: ''
+      version_added: 1.0.0
+    cm_files:
+      description: Manage files on CM Next
+      name: cm_files
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_backup_restore:
+      description: Backup and restore NEXT instance configration through CM
+      name: cm_next_backup_restore
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_deploy_f5os:
+      description: Module to manage deployments of BIG-IP NEXT instances on F5OS devices
+      name: cm_next_deploy_f5os
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_deploy_vmware:
+      description: Module to manage deployments of BIG-IP NEXT instances on VMWARE
+      name: cm_next_deploy_vmware
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_discover:
+      description: __SHORT_DESCRIPTION__
+      name: cm_next_discover
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_files:
+      description: Manage NEXT instance files through CM
+      name: cm_next_files
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_ha:
+      description: Configure High Availability for NEXT instances.
+      name: cm_next_ha
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_ha_failover:
+      description: Fail-over Next HA instance on CM
+      name: cm_next_ha_failover
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_provider:
+      description: Manage providers on Central Manager
+      name: cm_next_provider
+      namespace: ''
+      version_added: 1.0.0
+    cm_next_upgrade:
+      description: Manage NEXT instance upgrades through CM
+      name: cm_next_upgrade
+      namespace: ''
+      version_added: 1.0.0
+    cm_ssl_certificate_create:
+      description: Manages certificate and/or key on the Central Manager.
+      name: cm_ssl_certificate_create
+      namespace: ''
+      version_added: 1.0.0
+    cm_ssl_certificate_import:
+      description: Manages certificate, key and PKCS12 on the Central Manager.
+      name: cm_ssl_certificate_import
+      namespace: ''
+      version_added: 1.0.0
+  netconf: {}
+  shell: {}
+  strategy: {}
+  test: {}
+  vars: {}
+version: 0.8.0-beta
