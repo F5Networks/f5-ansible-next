@@ -46,6 +46,11 @@ options:
       - The password the CM uses to manage the target NEXT instance.
       - Parameter required when C(state) is C(present).
     type: str
+  accept_untrusted:
+    description:
+      - Option to enable/disable untrusted certificates from discovered NEXT instances.
+    type: bool
+    default: false
   force:
     description:
       - When C(true), re-discovers managed existing NEXT instance by removing adding the device with the
@@ -341,6 +346,16 @@ class ModuleManager(object):
         if response['code'] not in [200, 201, 202]:
             raise F5ModuleError(response['contents'])
 
+    def update_task_on_device(self, uri):
+        self.log_message(f"Patching task to accept untrusted certificates: {uri}")
+        payload = {"is_user_accepted_untrusted_cert": True}
+        response = self.client.patch(uri, data=payload)
+
+        if response['code'] not in [200, 201, 202, 204]:
+            raise F5ModuleError(response['contents'])
+        self.log_message("Task patched successfully.")
+        return True
+
     def create_on_device(self):
         interval, period = self.want.timeout
         params = self.changes.api_params()
@@ -356,6 +371,8 @@ class ModuleManager(object):
         task_url = f"/device/v1/discovery-tasks/{os.path.basename(response['contents']['path'])}"
         self.log_message("Discovery task created successfully")
         self.log_message(f"Discovery task url: {task_url}")
+        if self.want.accept_untrusted:
+            self.update_task_on_device(task_url)
         task = self.wait_for_task(task_url, interval, period)
 
         if task['status'] == 'failed':
@@ -440,6 +457,10 @@ class ArgumentSpec(object):
                 no_log=True,
                 required=True
             ),
+            accept_untrusted=dict(
+                type='bool',
+                default='no'
+            ),
             mgmt_user=dict(),
             mgmt_password=dict(
                 no_log=True
@@ -448,7 +469,10 @@ class ArgumentSpec(object):
                 type='int',
                 default=300
             ),
-            force=dict(type='bool', default='no'),
+            force=dict(
+                type='bool',
+                default='no'
+            ),
             state=dict(
                 default='present',
                 choices=['present', 'absent']

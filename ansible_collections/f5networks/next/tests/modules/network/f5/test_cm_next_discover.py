@@ -161,6 +161,60 @@ class TestManager(unittest.TestCase):
               'management_user': 'admin-cm', 'management_password': 'unwelcome123!'})
         )
 
+    def test_discover_device_accept_untrusted(self, *args):
+        set_module_args(dict(
+            device_ip='10.1.1.8',
+            device_port=2341,
+            device_user='foobar',
+            device_password='Welcome123!',
+            mgmt_user='admin-cm',
+            mgmt_password='unwelcome123!',
+            accept_untrusted='yes',
+            state='present',
+            timeout=300
+        ))
+
+        module = AnsibleModule(
+            argument_spec=self.spec.argument_spec,
+            supports_check_mode=self.spec.supports_check_mode,
+            required_if=self.spec.required_if
+        )
+        mm = ModuleManager(module=module)
+
+        mm.client.get.side_effect = [
+            dict(code=200, contents={'count': 0}),
+            dict(code=200, contents=load_fixture('cm_next_discovery_task_done.json')),
+        ]
+        mm.client.post.side_effect = [
+            dict(code=200, contents=load_fixture('cm_next_discovery_device_reachable.json')),
+            dict(code=200, contents=load_fixture('cm_next_discovery_task_started.json'))
+        ]
+        mm.client.patch.return_value = dict(code=204, contents={})
+
+        results = mm.exec_module()
+
+        self.assertTrue(results['changed'])
+        self.assertEqual(results['device_ip'], '10.1.1.8')
+        self.assertEqual(results['device_port'], 2341)
+        self.assertEqual(results['device_user'], 'foobar')
+        self.assertEqual(results['mgmt_user'], 'admin-cm')
+        self.assertTupleEqual(
+            mm.client.post.call_args_list[0][0],
+            ('/device/v1/instances/authenticate',
+             {'address': '10.1.1.8', 'port': 2341, 'username': 'foobar', 'password': 'Welcome123!'})
+        )
+        self.assertTupleEqual(
+            mm.client.post.call_args[0],
+            ('/device/v1/inventory',
+             {'address': '10.1.1.8', 'port': 2341, 'device_user': 'foobar', 'device_password': 'Welcome123!',
+              'management_user': 'admin-cm', 'management_password': 'unwelcome123!'})
+        )
+
+        self.assertDictEqual(
+            mm.client.patch.call_args[1],
+            {'data': {'is_user_accepted_untrusted_cert': True}}
+        )
+
     def test_discover_device_no_change(self, *args):
         set_module_args(dict(
             device_ip='10.1.1.10',
