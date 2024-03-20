@@ -64,6 +64,7 @@ options:
 notes:
   - This module's restore operation is not idempotent.
 author:
+  - Ravinder Reddy (@RavinderReddyF5)
   - Wojciech Wypior (@wojtek0806)
 '''
 

@@ -122,6 +122,8 @@ options:
     default: present
 author:
   - Rohit Upadhyay (@rupadhyay)
+  - Ravinder Reddy (@RavinderReddyF5)
+  - Wojciech Wypior (@wojtek0806)
 '''
 
 EXAMPLES = r'''

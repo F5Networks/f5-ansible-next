@@ -38,6 +38,7 @@ options:
       - "!providers"
     aliases: ['include']
 author:
+  - Ravinder Reddy (@RavinderReddyF5)
   - Wojciech Wypior (@wojtek0806)
 '''
 

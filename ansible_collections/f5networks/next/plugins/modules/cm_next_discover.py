@@ -11,9 +11,10 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_next_discover
-short_description: __SHORT_DESCRIPTION__
+short_description: Module to Add/Delete BIG-IP Next Instances onto Central Manager
 description:
-  - __LONG DESCRIPTION__.
+  - Module to Add/Discover/Delete C(BIG-IP-Next) Instances onto B(CM(Central Manager))
+  - Instances to be added are not deployed through CM
 version_added: 1.0.0
 options:
   device_ip:
@@ -74,6 +75,7 @@ options:
       - absent
     default: present
 author:
+  - Ravinder Reddy (@RavinderReddyF5)
   - Wojciech Wypior (@wojtek0806)
 '''
 
@@ -150,7 +152,8 @@ class Parameters(AnsibleF5Parameters):
         "address": "device_ip",
         "port": "device_port",
         "management_user": "mgmt_user",
-        "management_password": "mgmt_password"
+        "management_password": "mgmt_password",
+        "management_confirm_password": "mgmt_password"
     }
 
     api_attributes = [
@@ -159,7 +162,8 @@ class Parameters(AnsibleF5Parameters):
         "device_user",
         "device_password",
         "management_user",
-        "management_password"
+        "management_password",
+        "management_confirm_password"
     ]
 
     returnables = [
@@ -289,7 +293,7 @@ class ModuleManager(object):
         self._set_changed_options()
         if self.module.check_mode:  # pragma: no cover
             return True
-        self.check_if_device_reachable()
+        # self.check_if_device_reachable()
         return self.create_on_device()
 
     def exists(self):
@@ -349,7 +353,8 @@ class ModuleManager(object):
     def update_task_on_device(self, uri):
         self.log_message(f"Patching task to accept untrusted certificates: {uri}")
         payload = {"is_user_accepted_untrusted_cert": True}
-        response = self.client.patch(uri, data=payload)
+        self.log_message(f"Patching payload: {payload}")
+        response = self.client.patch(uri, body=payload)
 
         if response['code'] not in [200, 201, 202, 204]:
             raise F5ModuleError(response['contents'])

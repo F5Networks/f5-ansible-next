@@ -52,6 +52,7 @@ notes:
   - This module is not yet idempotent.
   - Module requires upgrade images to be present on the target Next instance.
 author:
+  - Ravinder Reddy (@RavinderReddyF5)
   - Wojciech Wypior (@wojtek0806)
 '''
 

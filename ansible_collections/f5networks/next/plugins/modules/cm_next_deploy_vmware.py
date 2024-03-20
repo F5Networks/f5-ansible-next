@@ -215,6 +215,7 @@ notes:
   - To check the results of deploy task use the provided C(task_id) and C(state)
     set to C(present).
 author:
+  - Ravinder Reddy (@RavinderReddyF5)
   - Wojciech Wypior (@wojtek0806)
 
 '''

@@ -4,6 +4,7 @@
 # GNU General Public License v3.0 (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
+
 __metaclass__ = type
 
 import json
@@ -24,7 +25,6 @@ from ansible_collections.f5networks.next.tests.compat.mock import (
 from ansible_collections.f5networks.next.tests.modules.utils import (
     set_module_args, fail_json, exit_json, AnsibleExitJson, AnsibleFailJson
 )
-
 
 fixture_path = os.path.join(os.path.dirname(__file__), 'fixtures')
 fixture_data = {}
@@ -138,9 +138,9 @@ class TestManager(unittest.TestCase):
             dict(code=200, contents=load_fixture('cm_next_discovery_task_done.json')),
         ]
         mm.client.post.side_effect = [
-            dict(code=200, contents=load_fixture('cm_next_discovery_device_reachable.json')),
             dict(code=200, contents=load_fixture('cm_next_discovery_task_started.json'))
         ]
+        # dict(code=200, contents=load_fixture('cm_next_discovery_device_reachable.json')),
 
         results = mm.exec_module()
 
@@ -150,15 +150,11 @@ class TestManager(unittest.TestCase):
         self.assertEqual(results['device_user'], 'foobar')
         self.assertEqual(results['mgmt_user'], 'admin-cm')
         self.assertTupleEqual(
-            mm.client.post.call_args_list[0][0],
-            ('/device/v1/instances/authenticate',
-             {'address': '10.1.1.8', 'port': 2341, 'username': 'foobar', 'password': 'Welcome123!'})
-        )
-        self.assertTupleEqual(
             mm.client.post.call_args[0],
             ('/device/v1/inventory',
              {'address': '10.1.1.8', 'port': 2341, 'device_user': 'foobar', 'device_password': 'Welcome123!',
-              'management_user': 'admin-cm', 'management_password': 'unwelcome123!'})
+              'management_user': 'admin-cm', 'management_password': 'unwelcome123!',
+              'management_confirm_password': 'unwelcome123!'})
         )
 
     def test_discover_device_accept_untrusted(self, *args):
@@ -186,7 +182,6 @@ class TestManager(unittest.TestCase):
             dict(code=200, contents=load_fixture('cm_next_discovery_task_done.json')),
         ]
         mm.client.post.side_effect = [
-            dict(code=200, contents=load_fixture('cm_next_discovery_device_reachable.json')),
             dict(code=200, contents=load_fixture('cm_next_discovery_task_started.json'))
         ]
         mm.client.patch.return_value = dict(code=204, contents={})
@@ -199,20 +194,16 @@ class TestManager(unittest.TestCase):
         self.assertEqual(results['device_user'], 'foobar')
         self.assertEqual(results['mgmt_user'], 'admin-cm')
         self.assertTupleEqual(
-            mm.client.post.call_args_list[0][0],
-            ('/device/v1/instances/authenticate',
-             {'address': '10.1.1.8', 'port': 2341, 'username': 'foobar', 'password': 'Welcome123!'})
-        )
-        self.assertTupleEqual(
             mm.client.post.call_args[0],
             ('/device/v1/inventory',
              {'address': '10.1.1.8', 'port': 2341, 'device_user': 'foobar', 'device_password': 'Welcome123!',
-              'management_user': 'admin-cm', 'management_password': 'unwelcome123!'})
+              'management_user': 'admin-cm', 'management_password': 'unwelcome123!',
+              'management_confirm_password': 'unwelcome123!'})
         )
 
         self.assertDictEqual(
             mm.client.patch.call_args[1],
-            {'data': {'is_user_accepted_untrusted_cert': True}}
+            {'body': {'is_user_accepted_untrusted_cert': True}}
         )
 
     def test_discover_device_no_change(self, *args):
@@ -286,7 +277,8 @@ class TestManager(unittest.TestCase):
             mm.client.post.call_args[0],
             ('/device/v1/inventory',
              {'address': '10.1.1.8', 'port': 2341, 'device_user': 'foobar', 'device_password': 'Welcome123!',
-              'management_user': 'admin-cm', 'management_password': 'unwelcome123!'})
+              'management_user': 'admin-cm', 'management_password': 'unwelcome123!',
+              'management_confirm_password': 'unwelcome123!'})
         )
 
     def test_remove_device(self, *args):
