@@ -60,3 +60,5 @@ releases:
         name: cm
         namespace: null
     release_date: '2024-03-29'
+  1.0.1:
+    release_date: '2024-03-29'

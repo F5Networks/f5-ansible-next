@@ -64,7 +64,7 @@ What types of modules do you want created? If you have a use case and can suffic
 you want to see, open an issue and we will hammer out the details.
 
 If you've got the time, consider sending an email that introduces yourself and what you do. 
-We love hearing about how you're using the F5OS collection for Ansible.
+We love hearing about how you're using the BIG-IP Next collection for Ansible.
 
 > **_NOTE:_** **This repository is a mirror, only issues submissions are accepted.**
 
