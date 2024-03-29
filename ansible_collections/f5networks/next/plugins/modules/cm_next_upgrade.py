@@ -10,29 +10,29 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_next_upgrade
-short_description: Manage NEXT instance upgrades through CM
+short_description: Manage BIG-IP Next instance upgrades through CM
 description:
-  - Manage NEXT instance upgrades through CM.
+  - Manage BIG-IP Next instance upgrades through CM.
 version_added: "1.0.0"
 options:
   device_hostname:
     description:
-      - The hostname of the Next instance to be upgraded.
+      - The hostname of the BIG-IP Next instance to be upgraded.
       - Parameter mutually exclusive with C(device_ip).
     type: str
   device_ip:
     description:
-      - The ip address of the Next instance to be upgraded.
+      - The ip address of the BIG-IP Next instance to be upgraded.
       - Parameter mutually exclusive with C(device_hostname).
     type: str
   filename:
     description:
-      - The filename of the uploaded image on Next instance.
+      - The filename of the uploaded image on BIG-IP Next instance.
     type: str
     required: True
   sig_filename:
     description:
-      - The filename of the uploaded signature file on the Next instance.
+      - The filename of the uploaded signature file on the BIG-IP Next instance.
     type: str
     required: True
   type:
@@ -44,20 +44,20 @@ options:
       - ve
   timeout:
     description:
-      - The amount of time in seconds to wait for the Next upgrade to complete.
+      - The amount of time in seconds to wait for the BIG-IP Next upgrade to complete.
       - The accepted value range is between C(150) and C(3600) seconds.
     type: int
     default: 300
 notes:
   - This module is not yet idempotent.
-  - Module requires upgrade images to be present on the target Next instance.
+  - Module requires upgrade images to be present on the target BIG-IP Next instance.
 author:
   - Ravinder Reddy (@RavinderReddyF5)
   - Wojciech Wypior (@wojtek0806)
 '''
 
 EXAMPLES = r'''
-- name: Upgrade Next instance
+- name: Upgrade BIG-IP Next instance
   cm_next_upgrade:
     device_ip: "10.1.1.11"
     filename: "BIG-IP-Next-0.14.0-2.45.3+0.0.24.tgz"
@@ -67,22 +67,22 @@ EXAMPLES = r'''
 
 RETURN = r'''
 device_hostname:
-  description: The hostname of the Next instance to be upgraded.
+  description: The hostname of the BIG-IP Next instance to be upgraded.
   returned: changed
   type: str
   sample: "foo.bar.net"
 device_ip:
-  description: The ip address of the Next instance to be upgraded.
+  description: The ip address of the BIG-IP Next instance to be upgraded.
   returned: changed
   type: str
   sample: "192.168.1.1"
 filename:
-  description: The filename of the uploaded image on Next instance.
+  description: The filename of the uploaded image on BIG-IP Next instance.
   returned: changed
   type: str
   sample: "BIG-IP-Next-0.14.0-2.45.3+0.0.24.tgz"
 sig_filename:
-  description: The filename of the uploaded signature file on the Next instance.
+  description: The filename of the uploaded signature file on the BIG-IP Next instance.
   returned: changed
   type: str
   sample: "BIG-IP-Next-0.14.0-2.45.3+0.0.24.tgz.512.sig"

@@ -106,56 +106,56 @@ files:
       sample: "080c62dcc1720"
   sample: hash/dictionary of values
 managed_devices:
-  description: Information about NEXT instances managed by the CM platform.
+  description: Information about BIG-IP Next instances managed by the CM platform.
   returned: When C(managed-devices) is specified in C(gather_subset).
   type: complex
   contains:
     address:
       description:
-        - The IP address of the Next instance.
+        - The IP address of the BIG-IP Next instance.
       returned: queried
       type: str
       sample: "192.168.1.1"
     hostname:
       description:
-        - The hostname of the Next instance.
+        - The hostname of the BIG-IP Next instance.
       returned: queried
       type: str
       sample: "foo.bar.net"
     mode:
       description:
-        - The operational mode of the Next instance.
+        - The operational mode of the BIG-IP Next instance.
       returned: queried
       type: str
       sample: "STANDALONE"
     id:
       description:
-        - The system generated ID for the managed Next instance.
+        - The system generated ID for the managed BIG-IP Next instance.
       returned: queried
       type: str
       sample: "a17209c8-eb8a"
     version:
       description:
-        - The current software version running on the Next instance.
+        - The current software version running on the BIG-IP Next instance.
       returned: queried
       type: str
       sample: "20.0.0-2.94.0+0.0.21"
     port:
       description:
-        - The port on which Next instance is communicating with CM.
+        - The port on which BIG-IP Next instance is communicating with CM.
       returned: queried
       type: int
       sample: 5443
     health:
       description:
-        - Detailed information on the state of the Next instance.
+        - Detailed information on the state of the BIG-IP Next instance.
       returned: queried
       sample: hash/dictionary of values
       type: dict
       contains:
         status:
           description:
-            - Current status of the NEXT instance.
+            - Current status of the BIG-IP Next instance.
           returned: queried
           type: str
           sample: "UNKNOWN"
@@ -167,50 +167,50 @@ managed_devices:
           sample: 1
         nodes:
           description:
-            - Detailed information about each node in Next instance.
+            - Detailed information about each node in BIG-IP Next instance.
           returned: queried
           type: complex
           contains:
             address:
               description:
-                - The IP address of the node in NEXT instance.
+                - The IP address of the node in BIG-IP Next instance.
               returned: queried
               type: str
               sample: "192.168.1.1"
             hostname:
               description:
-                - The hostname of the node in NEXT instance.
+                - The hostname of the node in BIG-IP Next instance.
               returned: queried
               type: str
               sample: "foo.bar.net"
             port:
               description:
-                - The port of the node in NEXT instance.
+                - The port of the node in BIG-IP Next instance.
               returned: queried
               type: int
               sample: 5443
             version:
               description:
-                - The version of software running on the node in NEXT instance.
+                - The version of software running on the node in BIG-IP Next instance.
               returned: queried
               type: str
               sample: "20.0.0-2.94.0+0.0.21"
             state:
               description:
-                - The state of the node in NEXT instance.
+                - The state of the node in BIG-IP Next instance.
               returned: queried
               type: str
               sample: "UNREACHABLE"
     files:
       description:
-        - Detailed information on the files uploaded to the Next instance.
+        - Detailed information on the files uploaded to the BIG-IP Next instance.
       returned: queried
       sample: hash/dictionary of values
       type: dict
       contains:
         file_name:
           description:
-            - Name of the file stored on the Next instance.
+            - Name of the file stored on the BIG-IP Next instance.
           returned: queried
           type: str
           sample: "foo_file"
@@ -222,7 +222,7 @@ managed_devices:
           sample: 885694
         description:
           description:
-            - Description of the file stored on the Next instance.
+            - Description of the file stored on the BIG-IP Next instance.
           returned: queried
           type: str
           sample: "this is a new file"

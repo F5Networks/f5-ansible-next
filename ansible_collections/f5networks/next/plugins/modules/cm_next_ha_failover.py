@@ -11,29 +11,29 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_next_ha_failover
-short_description: Fail-over Next HA instance on CM
+short_description: Fail-over BIG-IP Next HA instance on CM
 description:
-  - Force fail-over a NEXT has instance managed by CM.
+  - Force fail-over a BIG-IP Next HA instance managed by CM.
 version_added: 1.0.0
 options:
   ha_hostname:
     description:
-      - The hostname of the HA Next instance.
+      - The hostname of the HA BIG-IP Next instance.
       - Parameter mutually exclusive with C(ha_ip).
     type: str
   ha_ip:
     description:
-      - The ip address of the HA Next instance.
+      - The ip address of the HA BIG-IP Next instance.
       - Parameter mutually exclusive with C(ha_hostname).
     type: str
   active_unit_hostname:
     description:
-      - The hostname of the NEXT unit in HA pair to be made active.
+      - The hostname of the BIG-IP Next unit in HA pair to be made active.
       - Parameter mutually exclusive with C(active_unit_ip).
     type: str
   active_unit_ip:
     description:
-      - The ip address of the NEXT unit in HA pair to be made active.
+      - The ip address of the BIG-IP Next unit in HA pair to be made active.
       - Parameter mutually exclusive with C(active_unit_hostname).
     type: str
   timeout:
@@ -64,12 +64,12 @@ EXAMPLES = r'''
 RETURN = r'''
 
 active_unit_hostname:
-  description: The hostname of the NEXT unit in HA pair that is active.
+  description: The hostname of the BIG-IP Next unit in HA pair that is active.
   returned: changed
   type: str
   sample: "unit1.bar.net"
 active_unit_ip:
-  description: The ip address of the NEXT unit in HA pair that is active.
+  description: The ip address of the BIG-IP Next unit in HA pair that is active.
   returned: changed
   type: str
   sample: "10.1.16.1"

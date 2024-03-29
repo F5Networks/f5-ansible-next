@@ -10,9 +10,9 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 name: cm
-short_description: HttpApi Plugin for CM NEXT devices
+short_description: HttpApi Plugin for BIG-IP Next Central Manager devices
 description:
-  - This HttpApi plugin provides methods to connect to CM NEXT devices over a HTTP(S)-based API.
+  - This HttpApi plugin provides methods to connect to BIG-IP Next Central Manager devices over a HTTP(S)-based API.
 version_added: "1.0.0"
 options:
   debug_mode:

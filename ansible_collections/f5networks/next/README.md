@@ -1,7 +1,7 @@
-# F5OS Collection for Ansible
+# BIG-IP Next Collection for Ansible
 
-A collection focusing on managing BIG-IP NEXT devices through BIG-IP NEXT Central Manager (CM) API. The collection includes key imperative modules for 
-deploying NEXT instances as well as modules to manage CM devices.
+A collection focusing on managing BIG-IP Next devices through BIG-IP Next Central Manager (CM) API. The collection includes key imperative modules for 
+deploying BIG-IP Next instances as well as modules to manage CM devices.
 
 ## Requirements
 

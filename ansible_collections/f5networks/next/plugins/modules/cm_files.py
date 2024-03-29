@@ -13,9 +13,9 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_files
-short_description: Manage files uploads/deletes on CM Next
+short_description: Manage files uploads/deletes on BIG-IP Next CM
 description:
-  - Manage files uploads/deletes on CM Next
+  - Manage files uploads/deletes on BIG-IP Next CM
 version_added: "1.0.0"
 options:
   filename:

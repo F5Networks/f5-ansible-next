@@ -1,0 +1,62 @@
+ancestor: null
+releases:
+  1.0.0:
+    changes:
+      bugfixes:
+      - cm_next_discover - fixed a bug to add bigip next instance onto central manager
+        INFRAANO-1510
+    fragments:
+    - INFRAANO-1510.yaml
+    modules:
+    - description: Collect information from CM devices
+      name: cm_device_info
+      namespace: ''
+    - description: Manage files uploads/deletes on BIG-IP Next CM
+      name: cm_files
+      namespace: ''
+    - description: Manages Deploying an AS3 declaration to a specified instance managed
+        by BIG-IP Next Central Manager.
+      name: cm_next_as3_deploy
+      namespace: ''
+    - description: Backup and restore BIG-IP Next instance configration through CM
+      name: cm_next_backup_restore
+      namespace: ''
+    - description: Module to manage deployments of BIG-IP Next instances on F5OS devices
+      name: cm_next_deploy_f5os
+      namespace: ''
+    - description: Module to manage deployments of BIG-IP Next instances on VMWARE
+      name: cm_next_deploy_vmware
+      namespace: ''
+    - description: Module to Add/Delete BIG-IP Next Instances onto Central Manager
+      name: cm_next_discover
+      namespace: ''
+    - description: Manage BIG-IP Next instance files through CM
+      name: cm_next_files
+      namespace: ''
+    - description: Manages Global Resiliency Group on the Central Manager.
+      name: cm_next_global_resiliency_group
+      namespace: ''
+    - description: Configure High Availability for BIG-IP Next instances.
+      name: cm_next_ha
+      namespace: ''
+    - description: Fail-over BIG-IP Next HA instance on CM
+      name: cm_next_ha_failover
+      namespace: ''
+    - description: Manage providers on Central Manager
+      name: cm_next_provider
+      namespace: ''
+    - description: Manage BIG-IP Next instance upgrades through CM
+      name: cm_next_upgrade
+      namespace: ''
+    - description: Manages certificate and/or key on the Central Manager.
+      name: cm_ssl_certificate_create
+      namespace: ''
+    - description: Manages certificate, key and PKCS12 on the Central Manager.
+      name: cm_ssl_certificate_import
+      namespace: ''
+    plugins:
+      httpapi:
+      - description: HttpApi Plugin for BIG-IP Next Central Manager devices
+        name: cm
+        namespace: null
+    release_date: '2024-03-29'

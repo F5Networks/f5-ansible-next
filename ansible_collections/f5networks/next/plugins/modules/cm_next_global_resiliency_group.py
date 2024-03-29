@@ -39,25 +39,25 @@ options:
       - udp
   instances:
     description:
-      - Specifies the Next instances of the global resiliency group.
+      - Specifies the BIG-IP Next instances of the global resiliency group.
     type: list
     elements: raw
     suboptions:
       address:
         description:
-          - Specifies the IP address of the Next instance.
+          - Specifies the IP address of the BIG-IP Next instance.
         type: str
       hostname:
         description:
-          - Specifies the hostname of the Next instance.
+          - Specifies the hostname of the BIG-IP Next instance.
         type: str
       dns_listener_address:
         description:
-          - Specifies the DNS listener address of the Next instance.
+          - Specifies the DNS listener address of the BIG-IP Next instance.
         type: str
       group_sync_address:
         description:
-          - Specifies the group sync address of the Next instance.
+          - Specifies the group sync address of the BIG-IP Next instance.
         type: str
   timeout:
     description:

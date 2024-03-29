@@ -19,42 +19,42 @@ version_added: 1.0.0
 options:
   device_ip:
     description:
-      - The ip address of the Next instance to discover and add under CM management.
+      - The ip address of the BIG-IP Next instance to discover and add under CM management.
     type: str
     required: True
   device_port:
     description:
-      - The port on which CM can communicate with the Next instance.
+      - The port on which CM can communicate with the BIG-IP Next instance.
     type: int
     default: 5443
   device_user:
     description:
-      - The administrator username on the target NEXT instance.
+      - The administrator username on the target BIG-IP Next instance.
     type: str
     required: True
   device_password:
     description:
-      - The administrator password on the target NEXT instance.
+      - The administrator password on the target BIG-IP Next instance.
     type: str
     required: True
   mgmt_user:
     description:
-      - The username the CM uses to manage the target NEXT instance.
+      - The username the CM uses to manage the target BIG-IP Next instance.
       - Parameter required when C(state) is C(present).
     type: str
   mgmt_password:
     description:
-      - The password the CM uses to manage the target NEXT instance.
+      - The password the CM uses to manage the target BIG-IP Next instance.
       - Parameter required when C(state) is C(present).
     type: str
   accept_untrusted:
     description:
-      - Option to enable/disable untrusted certificates from discovered NEXT instances.
+      - Option to enable/disable untrusted certificates from discovered BIG-IP Next instances.
     type: bool
     default: false
   force:
     description:
-      - When C(true), re-discovers managed existing NEXT instance by removing adding the device with the
+      - When C(true), re-discovers managed existing BIG-IP Next instance by removing adding the device with the
         given C(device_ip).
       - When C(false), no device is added if a device with the same C(device_ip) exists.
     type: bool
@@ -67,8 +67,8 @@ options:
     default: 300
   state:
     description:
-      - When C(present), ensures the NEXT instance is discovered and added under CM management.
-      - When C(absent), ensures the NEXT instance is removed from CM management.
+      - When C(present), ensures the BIG-IP Next instance is discovered and added under CM management.
+      - When C(absent), ensures the BIG-IP Next instance is removed from CM management.
     type: str
     choices:
       - present
@@ -80,7 +80,7 @@ author:
 '''
 
 EXAMPLES = r'''
-- name: Add Next instance
+- name: Add BIG-IP Next instance
   cm_next_discover:
     device_ip: "10.1.1.8"
     device_port: 5443
@@ -90,7 +90,7 @@ EXAMPLES = r'''
     mgmt_password: "Welcome123!"
     timeout: 600
 
-- name: Add Next instance - force on
+- name: Add BIG-IP Next instance - force on
   cm_next_discover:
     device_ip: "10.1.1.8"
     device_port: 5443
@@ -101,7 +101,7 @@ EXAMPLES = r'''
     timeout: 600
     force: true
 
-- name: Remove Next Instance
+- name: Remove BIG-IP Next Instance
   cm_next_discover:
     device_ip: "10.1.1.8"
     device_user: "admin"
@@ -112,22 +112,22 @@ EXAMPLES = r'''
 
 RETURN = r'''
 device_ip:
-  description: The ip address of the managed Next instance.
+  description: The ip address of the managed BIG-IP Next instance.
   returned: changed
   type: str
   sample: "192.168.1.1"
 device_port:
-  description: The port on which CM can communicate with the Next instance.
+  description: The port on which CM can communicate with the BIG-IP Next instance.
   returned: changed
   type: int
   sample: 5443
 device_user:
-  description: The administrator username on the target NEXT instance.
+  description: The administrator username on the target BIG-IP Next instance.
   returned: changed
   type: str
   sample: "admin"
 mgmt_user:
-  description: The username the CM uses to manage the target NEXT instance.
+  description: The username the CM uses to manage the target BIG-IP Next instance.
   returned: changed
   type: str
   sample: "admin-cm"

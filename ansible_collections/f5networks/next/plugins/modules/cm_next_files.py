@@ -10,45 +10,45 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_next_files
-short_description: Manage NEXT instance files through CM
+short_description: Manage BIG-IP Next instance files through CM
 description:
-  - Manage NEXT files through CM.
+  - Manage BIG-IP Next files through CM.
 version_added: "1.0.0"
 options:
   device_hostname:
     description:
-      - The hostname of the Next instance to manage files on.
+      - The hostname of the BIG-IP Next instance to manage files on.
       - Parameter mutually exclusive with C(device_ip).
     type: str
   device_ip:
     description:
-      - The ip address of the Next instance to manage files on.
+      - The ip address of the BIG-IP Next instance to manage files on.
       - Parameter mutually exclusive with C(device_hostname).
     type: str
   filename:
     description:
-      - The path and filename of the file to be uploaded to Next instance.
+      - The path and filename of the file to be uploaded to BIG-IP Next instance.
     type: path
     required: True
   name:
     description:
-      - The name of the file as it should appear on the Next instance.
+      - The name of the file as it should appear on the BIG-IP Next instance.
       - If not provided the parameter is inferred from C(filename).
     type: str
   description:
     description:
-      - The description of the uploaded file as it should appear on the Next instance.
+      - The description of the uploaded file as it should appear on the BIG-IP Next instance.
     type: str
   timeout:
     description:
-      - The amount of time in seconds to wait for the file to appear on NEXT instance.
+      - The amount of time in seconds to wait for the file to appear on BIG-IP Next instance.
       - The accepted value range is between C(150) and C(3600) seconds.
     type: int
     default: 300
   force:
     description:
       - When C(true), uploads the file every time and replaces the file on the
-        Next instance.
+        BIG-IP Next instance.
       - When C(false), the file is only uploaded if it does not already
         exist.
     type: bool
@@ -68,7 +68,7 @@ author:
 '''
 
 EXAMPLES = r'''
-- name: Upgrade Next instance
+- name: Upgrade BIG-IP Next instance
   cm_next_files:
     device_ip: "127.1.1.1"
     filename: "/path/to/file/file.json"
@@ -91,27 +91,27 @@ EXAMPLES = r'''
 
 RETURN = r'''
 device_hostname:
-  description: The hostname of the Next instance to manage files on.
+  description: The hostname of the BIG-IP Next instance to manage files on.
   returned: changed
   type: str
   sample: "foo.bar.net"
 device_ip:
-  description: The ip address of the Next instance to manage files on.
+  description: The ip address of the BIG-IP Next instance to manage files on.
   returned: changed
   type: str
   sample: "192.168.1.1"
 filename:
-  description: The path and filename of the file to be uploaded to Next instance.
+  description: The path and filename of the file to be uploaded to BIG-IP Next instance.
   returned: changed
   type: str
   sample: "/path/to/file.tar"
 name:
-  description: The name of the file as it should appear on the Next instance.
+  description: The name of the file as it should appear on the BIG-IP Next instance.
   returned: changed
   type: str
   sample: "my_file.tar"
 description:
-  description: The description of the uploaded file as it should appear on the Next instance.
+  description: The description of the uploaded file as it should appear on the BIG-IP Next instance.
   returned: changed
   type: str
   sample: "this is my file"

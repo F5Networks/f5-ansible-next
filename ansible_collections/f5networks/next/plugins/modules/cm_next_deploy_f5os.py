@@ -11,9 +11,9 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_next_deploy_f5os
-short_description: Module to manage deployments of BIG-IP NEXT instances on F5OS devices
+short_description: Module to manage deployments of BIG-IP Next instances on F5OS devices
 description:
-  - Module to manage deployments of BIG-IP NEXT instances on F5OS using
+  - Module to manage deployments of BIG-IP Next instances on F5OS using
     f5os provider.
 version_added: 1.0.0
 options:
@@ -36,17 +36,17 @@ options:
           - rseries
       image_name:
         description:
-          - The name of the Next image on the target F5OS host to use to deploy the instance.
+          - The name of the BIG-IP Next image on the target F5OS host to use to deploy the instance.
         type: str
         required: true
   instance:
     description:
-      - Settings related to NEXT instance provisioning.
+      - Settings related to BIG-IP Next instance provisioning.
     type: dict
     suboptions:
       instance_hostname:
         description:
-          - Hostname for the deployed BIG-IP NEXT instance.
+          - Hostname for the deployed BIG-IP Next instance.
         type: str
         required: true
       disk_size:
@@ -67,7 +67,7 @@ options:
         elements: int
       mgmt_address:
         description:
-          - The desired management IP address for the BIG-IP NEXT instance.
+          - The desired management IP address for the BIG-IP Next instance.
           - The IP address must be provided in CIDR format e.g. 192.168.1.1/24.
         type: str
         required: true
@@ -80,31 +80,31 @@ options:
         required: true
       mgmt_user:
         description:
-          - The desired username used by CM to manage BIG-IP NEXT instance.
+          - The desired username used by CM to manage BIG-IP Next instance.
         type: str
         required: true
       mgmt_password:
         description:
-          - The desired password used by CM to manage BIG-IP NEXT instance.
+          - The desired password used by CM to manage BIG-IP Next instance.
         type: str
         required: true
       external_network_name:
         description:
           - The name of the network that will be used as an external
-            network in deployed BIG-IP NEXT instance.
+            network in deployed BIG-IP Next instance.
         type: str
         required: true
       ha_dp_vlan_name:
         description:
           - The name of the vlan that will be used as a dataplane
-            network for HA in deployed BIG-IP NEXT instance.
+            network for HA in deployed BIG-IP Next instance.
           - This name is unique to the instance and does not correspond
             to the name of vlan as configured on the host.
         type: str
       ha_cp_vlan_name:
         description:
           - The name of the vlan that will be used as a control plane
-            network for HA in deployed BIG-IP NEXT instance.
+            network for HA in deployed BIG-IP Next instance.
           - This name is unique to the instance and does not correspond
             to the name of vlan as configured on the host.
         type: str
@@ -123,14 +123,14 @@ options:
       external_vlan_name:
         description:
           - The name of the VLAN to configure for external network in the BIG-IP
-            NEXT instance.
+            Next instance.
           - This name is unique to the instance and does not correspond
             to the name of vlan as configured on the host.
         type: str
       internal_vlan_name:
         description:
           - The name of the VLAN to configure for internal network in the BIG-IP
-            NEXT instance.
+            Next instance.
           - This name is unique for the instance and does not correspond
             to the name of vlan as configured on the host.
         type: str
@@ -148,7 +148,7 @@ options:
         type: int
       external_ip_address:
         description:
-          - The non-floating IP address for external network in the BIG-IP NEXT
+          - The non-floating IP address for external network in the BIG-IP Next
             instance.
           - When provided this parameter requires C(external_vlan_name) to be
             defined.
@@ -156,7 +156,7 @@ options:
         type: str
       internal_ip_address:
         description:
-          - The non-floating IP address for internal network in the BIG-IP NEXT
+          - The non-floating IP address for internal network in the BIG-IP Next
             instance.
           - When provided this parameter requires C(internal_vlan_name) to be
             defined.
@@ -199,7 +199,7 @@ options:
     default: deploy
 notes:
   - Module runs asynchronously, this means it is not IDEMPOTENT until the
-    desired BIG-IP NEXT instance has been provisioned and registered in CM.
+    desired BIG-IP Next instance has been provisioned and registered in CM.
     Repeating the same deployment task twice will produce unexpected results.
   - To check the results of deploy task use the provided C(task_id) and C(state)
     set to C(present).
@@ -210,7 +210,7 @@ author:
 '''
 
 EXAMPLES = r'''
-- name: Deploy BIG-IP NEXT instance on rSeries
+- name: Deploy BIG-IP Next instance on rSeries
   cm_next_deploy_f5os:
     state: "deploy"
     provider:

@@ -35,7 +35,7 @@ options:
     required: True
   target_ip:
     description:
-      - The IP address of the BIGIP-Next instance on which to manage the AS3 declaration.
+      - The IP address of the BIG-IP Next instance on which to manage the AS3 declaration.
     type: str
     required: True
   timeout:
@@ -77,7 +77,7 @@ content:
   type: dict
   sample: hash/dictionary of values
 target_ip:
-  description: The IP address of the BIGIP-Next instance on which to deploy the AS3 declaration.
+  description: The IP address of the BIG-IP Next instance on which to deploy the AS3 declaration.
   returned: changed
   type: str
   sample: 1.2.3.4

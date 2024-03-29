@@ -11,9 +11,9 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_next_ha
-short_description: Configure High Availability for NEXT instances.
+short_description: Configure High Availability for BIG-IP Next instances.
 description:
-  - Configure High Availability for NEXT instances managed by CM.
+  - Configure High Availability for BIG-IP Next instances managed by CM.
 version_added: 1.0.0
 options:
   ha_name:
@@ -148,7 +148,7 @@ author:
 '''
 
 EXAMPLES = r'''
-- name: Create HA NEXT instance on CM
+- name: Create HA Next instance on CM
   cm_next_ha:
     ha_name: 'demoha'
     ha_ip: '10.11.11.20'
@@ -190,12 +190,12 @@ ha_ip:
   type: str
   sample: "192.168.1.1"
 active_node_ip:
-  description: The management IP of the active NEXT instance.
+  description: The management IP of the active Next instance.
   returned: changed
   type: str
   sample: "192.168.10.1"
 standby_node_ip:
-  description: The management IP of the standby NEXT instance.
+  description: The management IP of the standby Next instance.
   returned: changed
   type: str
   sample: "192.168.10.1"

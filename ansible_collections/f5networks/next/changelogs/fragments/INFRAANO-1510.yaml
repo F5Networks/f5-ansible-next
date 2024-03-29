@@ -1,3 +1,0 @@
----
-bugfixes:
-  - cm_next_discover - fixed a bug to add bigip next instance onto central manager INFRAANO-1510

@@ -11,26 +11,26 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_next_backup_restore
-short_description: Backup and restore NEXT instance configration through CM
+short_description: Backup and restore BIG-IP Next instance configration through CM
 description:
-  - Backup and restore NEXT instance configration through CM, manage backup files on CM.
+  - Backup and restore BIG-IP Next instance configration through CM, manage backup files on CM.
 version_added: "1.0.0"
 options:
   device_hostname:
     description:
-      - The hostname of the Next instance to back up config on.
+      - The hostname of the BIG-IP Next instance to back up config on.
       - Parameter mutually exclusive with C(device_ip).
       - The parameter is required when C(state) is C(backup) or C(restore).
     type: str
   device_ip:
     description:
-      - The ip address of the Next instance to back up config on.
+      - The ip address of the BIG-IP Next instance to back up config on.
       - Parameter mutually exclusive with C(device_hostname).
       - The parameter is required when C(state) is C(backup) or C(restore).
     type: str
   filename:
     description:
-      - The name of the file to save the Next instance backup.
+      - The name of the file to save the BIG-IP Next instance backup.
       - System automatically appends .tar.gz extension to filenames provided without it.
     type: str
   file_password:
@@ -53,7 +53,7 @@ options:
   state:
     description:
       - When C(backup), ensures the backup is file is created.
-      - When C(restore), ensures the target Next instance is restored from the given backup filename.
+      - When C(restore), ensures the target BIG-IP Next instance is restored from the given backup filename.
       - When C(absent), ensures the backup file is removed.
     type: str
     choices:
@@ -70,7 +70,7 @@ author:
 
 
 EXAMPLES = r'''
-- name: Backup Next instance
+- name: Backup BIG-IP Next instance
   cm_next_backup_restore:
     device_ip: "127.1.1.1"
     filename: "ansible_test.tar.gz"
@@ -87,7 +87,7 @@ EXAMPLES = r'''
     force: "yes"
     timeout: 600
 
-- name: Restore Next instance
+- name: Restore BIG-IP Next instance
   cm_next_backup_restore:
     device_ip: "127.1.1.1"
     filename: "ansible_test.tar.gz"
@@ -103,17 +103,17 @@ EXAMPLES = r'''
 
 RETURN = r'''
 device_hostname:
-  description: The hostname of the Next instance to manage files on.
+  description: The hostname of the BIG-IP Next instance to manage files on.
   returned: changed
   type: str
   sample: "foo.bar.net"
 device_ip:
-  description: The ip address of the Next instance to manage files on.
+  description: The ip address of the BIG-IP Next instance to manage files on.
   returned: changed
   type: str
   sample: "192.168.1.1"
 filename:
-  description: The name of the file to save the Next instance backup.
+  description: The name of the file to save the BIG-IP Next instance backup.
   returned: changed
   type: str
   sample: "file.tar.gz"
