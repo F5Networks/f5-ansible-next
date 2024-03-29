@@ -97,14 +97,13 @@ class TestManager(unittest.TestCase):
         )
         mm = ModuleManager(module=module)
 
-        expected = ('/api/system/v1/files',
+        expected = ('/api/v1/spaces/default/files',
                     {'content': {'filename': '/path/to/file/schema_v16_1.json',
                                  'mime_type': 'application/octet-stream'}, 'description': 'test file',
                      'file_name': 'simple_test.json'}
                     )
         # Override methods to force specific logic in the module to happen
         mm.client.get.side_effect = [
-
             dict(code=200, contents=load_fixture('cm_files_file_not_present.json')),
             dict(code=200, contents=load_fixture('cm_files_file_exists.json'))
         ]
@@ -155,8 +154,10 @@ class TestManager(unittest.TestCase):
         # Override methods to force specific logic in the module to happen
         mm.client.get.side_effect = [
             dict(code=200, contents=load_fixture('cm_files_file_exists.json')),
-            dict(code=200, contents=load_fixture('cm_files_file_not_present.json'))
+            dict(code=200, contents=load_fixture('cm_files_file_not_present.json')),
+            dict(code=200, contents=load_fixture('cm_files_file_exists.json')),
         ]
+
         mm.client.plugin.send_multipart.return_value = dict(code=202, contents={})
         mm.client.delete.return_value = dict(code=204, contents={})
 
@@ -165,7 +166,7 @@ class TestManager(unittest.TestCase):
         self.assertTrue(results['changed'])
         self.assertEqual(
             mm.client.delete.call_args_list[0][0][0],
-            '/system/v1/files/ee2724fd-afd6-45e8-8a1c-3f9cba7577b9'
+            '/v1/spaces/default/files/ee2724fd-afd6-45e8-8a1c-3f9cba7577b9'
         )
         self.assertEqual(results['description'], 'test file')
         self.assertEqual(results['name'], 'simple_test.json')
@@ -190,13 +191,12 @@ class TestManager(unittest.TestCase):
             dict(code=200, contents=load_fixture('cm_files_file_not_present.json')),
         ]
         mm.client.delete.return_value = dict(code=202, contents={})
-
         results = mm.exec_module()
 
         self.assertTrue(results['changed'])
         self.assertEqual(
             mm.client.delete.call_args_list[0][0][0],
-            '/system/v1/files/ee2724fd-afd6-45e8-8a1c-3f9cba7577b9'
+            '/v1/spaces/default/files/ee2724fd-afd6-45e8-8a1c-3f9cba7577b9'
         )
 
     def test_delete_file_no_change(self, *args):

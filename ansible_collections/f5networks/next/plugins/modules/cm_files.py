@@ -13,9 +13,9 @@ __metaclass__ = type
 DOCUMENTATION = r'''
 ---
 module: cm_files
-short_description: Manage files on CM Next
+short_description: Manage files uploads/deletes on CM Next
 description:
-  - Manage files on CM Next.
+  - Manage files uploads/deletes on CM Next
 version_added: "1.0.0"
 options:
   filename:
@@ -32,6 +32,12 @@ options:
     description:
       - The description of the uploaded file as it should appear on the CM.
     type: str
+  timeout:
+    description:
+      - The amount of time in seconds to wait for the file to appear on CM.
+      - The accepted value range is between C(150) and C(3600) seconds.
+    type: int
+    default: 300
   force:
     description:
       - When C(true), uploads the file every time and replaces the file on the CM.
@@ -54,7 +60,7 @@ author:
 '''
 
 EXAMPLES = r'''
-- name: Upgrade Next instance
+- name: Upload files to CM(Central Manager)
   cm_files:
     filename: "/path/to/file/file.json"
     description: "some file"
@@ -90,6 +96,7 @@ description:
   sample: "this is my file"
 '''
 import os
+import time
 
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.connection import Connection
@@ -125,6 +132,19 @@ class ModuleParameters(Parameters):
         if self._values['name'] is None:
             return os.path.basename(self._values['filename'])
         return self._values['name']
+
+    @property
+    def timeout(self):
+        divisor = 10
+        timeout = self._values['timeout']
+        if timeout < 10 or timeout > 1800:
+            raise F5ModuleError(
+                "Timeout value must be between 10 and 1800 seconds."
+            )
+        if timeout > 99:
+            divisor = 100
+        interval = timeout / divisor
+        return interval, divisor
 
 
 class Changes(Parameters):
@@ -230,7 +250,7 @@ class ModuleManager(object):
         return True
 
     def exists(self):
-        uri = f"/system/v1/files?filter=file_name+eq+'{self.want.name}'"
+        uri = f"/v1/spaces/default/files?filter=file_name+eq+'{self.want.name}'"
         response = self.client.get(uri)
 
         if response['code'] not in [200, 201, 202]:
@@ -253,17 +273,18 @@ class ModuleManager(object):
         }
         self.log_message(f"Creating file {self.want.filename}")
         self.log_message(f"Form data: {form}")
-        uri = '/api/system/v1/files'
+        uri = '/api/v1/spaces/default/files'
         response = self.client.plugin.send_multipart(uri, form)
 
         if response['code'] not in [200, 201, 202, 204]:
             raise F5ModuleError(response['contents'])
-
-        self.log_message("File created successfully")
-        return True
+        interval, period = self.want.timeout
+        return self.wait_for_file(interval, period)
+        # self.log_message("File created successfully")
+        # return True
 
     def remove_from_device(self):
-        uri = f"/system/v1/files/{self.file_uuid}"
+        uri = f"/v1/spaces/default/files/{self.file_uuid}"
         response = self.client.delete(uri)
 
         if response['code'] not in [200, 201, 202, 204]:
@@ -271,6 +292,19 @@ class ModuleManager(object):
 
         self.log_message("File deleted successfully")
         return True
+
+    def wait_for_file(self, interval, period):
+        for x in range(0, period):
+            self.log_message(f"Waiting for API to register file, count: {x}", 'debug')
+            if self.exists():
+                return True
+            time.sleep(interval)
+            self.log_message(f"Pausing for {interval}", 'debug')
+        self.log_message("Module timed out, waiting for file", 'error')
+        raise F5ModuleError(
+            "Module timeout reached, state change is unknown, "
+            "please increase the timeout parameter for long lived actions."
+        )
 
 
 class ArgumentSpec(object):
@@ -284,6 +318,10 @@ class ArgumentSpec(object):
                 required=True,
             ),
             force=dict(type='bool', default='no'),
+            timeout=dict(
+                type='int',
+                default=300
+            ),
             state=dict(
                 default='present',
                 choices=['present', 'absent']

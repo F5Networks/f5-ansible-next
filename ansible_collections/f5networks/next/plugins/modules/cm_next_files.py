@@ -274,11 +274,12 @@ class ModuleManager(object):
 
     def file_exists(self):
         uri = f"/device/v1/proxy/{self.device_uuid}?path=/files"
+        # uri = f"/v1/spaces/default/instances/{self.device_uuid}/proxy/files"
         response = self.client.get(uri)
 
         if response['code'] not in [200, 201, 202]:
             raise F5ModuleError(response['contents'])
-
+        self.log_message(f"Response:{response['contents']}")
         if any([response['contents'].get('count', 0) == 0, not response['contents'].get('_embedded')]):
             self.log_message("No file found")
             return False
@@ -294,9 +295,9 @@ class ModuleManager(object):
 
     def device_exists(self):
         if self.want.device_ip:
-            uri = f"/device/v1/inventory?filter=address+eq+'{self.want.device_ip}'"
+            uri = f"/v1/spaces/default/instances?filter=address+eq+'{self.want.device_ip}'"
         else:
-            uri = f"/device/v1/inventory?filter=hostname+eq+'{self.want.device_hostname}'"
+            uri = f"/v1/spaces/default/instances?filter=hostname+eq+'{self.want.device_hostname}'"
 
         response = self.client.get(uri)
 
@@ -336,8 +337,11 @@ class ModuleManager(object):
         self.log_message(f"Creating file {self.want.filename}")
         self.log_message(f"Form data: {form}")
 
-        uri = f'/api/device/v1/proxy-file-upload/{self.device_uuid}'
+        # uri = f'/api/device/v1/proxy-file-upload/{self.device_uuid}'
+        uri = f"/api/v1/spaces/default/instances/{self.device_uuid}/proxy-file-upload"
         response = self.client.plugin.send_multipart(uri, form)
+
+        self.log_message(f"Response:{response['contents']}")
 
         if response['code'] not in [200, 201, 202, 204]:
             raise F5ModuleError(response['contents'])

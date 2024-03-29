@@ -1,0 +1,41 @@
+{
+    "code": 200,
+    "contents": {
+        "_embedded": {
+            "groups": [
+                {
+                    "_links": {
+                        "self": {
+                            "href": "/api/v1/spaces/default/gslb/gr-groups//57074832-9f6b-4c48-b982-e234987a04f8"
+                        }
+                    },
+                    "fqdn_count": {
+                        "active": 0,
+                        "disabled": 0
+                    },
+                    "health": "CRITICAL",
+                    "id": "57074832-9f6b-4c48-b982-e234987a04f8",
+                    "instance_count": 1,
+                    "instances": [
+                        {
+                            "hostname": "",
+                            "address": "",
+                            "dns_listener_address": "",
+                            "group_sync_address": "",
+                            "health": ""
+                        }
+                    ],
+                    "name": "testGRG",
+                    "status": "DEPLOYED"
+                }
+            ]
+        },
+        "_links": {
+            "self": {
+                "href": "/api/v1/spaces/default/gslb/gr-groups/"
+            }
+        },
+        "count": 1,
+        "total": 1
+    }
+}

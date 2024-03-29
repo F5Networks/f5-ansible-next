@@ -130,7 +130,7 @@ class TestManager(unittest.TestCase):
         )
         mm = ModuleManager(module=module)
 
-        expected = ('/api/device/v1/proxy-file-upload/15b640fd-c4c1-434c-b294-af155005d3bd',
+        expected = ('/api/v1/spaces/default/instances/15b640fd-c4c1-434c-b294-af155005d3bd/proxy-file-upload',
                     {'description': 'test file', 'fileName':
                         {'filename': '/path/to/file/schema_v16_1.json', 'mime_type': 'application/octet-stream'},
                      'name': 'test.json'}

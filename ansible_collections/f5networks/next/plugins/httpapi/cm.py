@@ -4,6 +4,7 @@
 # GNU General Public License v3.0 (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
+
 __metaclass__ = type
 
 DOCUMENTATION = r'''
@@ -48,6 +49,7 @@ options:
     vars:
     - name: f5_secrets
 author:
+  - Ravinder Reddy (@RavinderReddyF5)
   - Wojciech Wypior (@wojtek0806)
 '''
 import json
@@ -149,17 +151,16 @@ class HttpApi(HttpApiBase):
         data = json.dumps(body) if body or body == {} else None
         try:
             self._log_api_call(method, url, body)
+            self.send_log(f"URL:{url}")
             response, response_data = self.connection.send(url, data, method=method, **kwargs)
             response_value = self._get_response_value(response_data)
-            self._log_api_response(response, response_value)
             return dict(
                 code=response.getcode(),
                 contents=self._response_to_json(response_value),
                 headers=dict(response.getheaders())
             )
         except HTTPError as e:
-            self._log_api_response(e, is_error=True)
-            return dict(code=e.code, contents=json.loads(e.read()))
+            return dict(code=e.code, contents="{0}".format(json.loads(e.read())))
 
     def _log_api_call(self, method, url, data=None):
         if data:
@@ -173,13 +174,13 @@ class HttpApi(HttpApiBase):
     def _log_api_response(self, response, response_value=None, is_error=False):
         if is_error:
             self.send_log(f"NEXT API HTTP Error Code: {response.code}", 'debug')
-            self.send_log(f"NEXT API HTTP Error Headers: {response.headers}", 'debug')
-            self.send_log(
-                f"NEXT API HTTP Error Body: {sanitize_sensitive_data(json.loads(response.read()), self.secrets)}",
-                'debug'
-            )
+            # self.send_log(f"NEXT API HTTP Error Headers: {response.headers}", 'debug')
+            # self.send_log(
+            #     f"NEXT API HTTP Error Body: {sanitize_sensitive_data(json.loads(response.read()), self.secrets)}",
+            #     'debug'
+            # )
             # need to rewind the buffer
-            response.seek(0)
+            response.read().seek(0)
         elif response and response_value:
             self.send_log(f"NEXT API Response Code: {response.getcode()}", 'debug')
             self.send_log(f"NEXT API Response Headers: {dict(response.getheaders())}", 'debug')
@@ -193,6 +194,7 @@ class HttpApi(HttpApiBase):
     def _response_to_json(self, response_text):
         try:
             return json.loads(response_text) if response_text else {}
+        # JSONDecodeError only available on Python 3.5+
         except json.JSONDecodeError:
             self.send_log(f"Invalid JSON response: {response_text}", 'error')
             raise F5ModuleError(f"Invalid JSON response: {response_text}")
@@ -203,14 +205,13 @@ class HttpApi(HttpApiBase):
         try:
             response, response_data = self.connection.send(url, res[1], method='POST', headers=h)
             response_value = self._get_response_value(response_data)
-            self._log_api_response(response, response_value)
+            # self._log_api_response(response, response_value)
             return dict(
                 code=response.getcode(),
                 contents=self._response_to_json(response_value),
                 headers=dict(response.getheaders())
             )
         except HTTPError as e:
-            self._log_api_response(e, is_error=True)
             return dict(code=e.code, contents=json.loads(e.read()))
 
     def init_logger(self, mod_name):

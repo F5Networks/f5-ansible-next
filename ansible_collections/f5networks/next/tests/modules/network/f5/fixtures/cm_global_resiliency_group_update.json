@@ -1,0 +1,36 @@
+{
+    "code": 200,
+    "contents": {
+        "_links": {
+            "self": {
+                "href": "/api/v1/spaces/default/gslb/gr-groups/0c853b12-c4f2-4dfe"
+            }
+        },
+        "dns_listener_name": "testDNSListener",
+        "dns_listener_port": 8888,
+        "fqdn_count": {
+            "active": 0,
+            "disabled": 0
+        },
+        "health": "GOOD",
+        "id": "0c853b12-c4f2-4dfe",
+        "instance_count": 1,
+        "instances": [
+            {
+                "id": "4aba5a93-9672-4029",
+                "hostname": "big-ip-next",
+                "address": "10.21.138.232",
+                "dns_listener_address": "10.4.1.56",
+                "group_sync_address": "10.4.1.56/24",
+                "health": "GOOD"
+            }
+        ],
+        "name": "testGRG",
+        "protocols": [
+            "tcp",
+            "udp"
+        ],
+        "status": "DEPLOYED"
+    }
+    
+}
