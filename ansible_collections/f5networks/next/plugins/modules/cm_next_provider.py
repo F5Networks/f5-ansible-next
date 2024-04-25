@@ -51,6 +51,11 @@ options:
       - The password that the Central Manager uses when connecting with the specified provider.
       - The parameter must be specified when C(username) is defined.
     type: str
+  cert_fingerprint:
+    description:
+      - The fingerprint of the certificate that the Central Manager uses when connecting with the specified provider.
+    type: str
+    version_added: "1.1.0"
   force:
     description:
       - When C(true), forces update of the existing provider, this option is required when attempting to change
@@ -138,6 +143,8 @@ username:
   type: str
   sample: admin
 '''
+from urllib.parse import quote
+
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.connection import Connection
 
@@ -161,6 +168,7 @@ class Parameters(AnsibleF5Parameters):
         'host',
         'username',
         'password',
+        'cert_fingerprint',
     ]
 
     returnables = [
@@ -169,6 +177,7 @@ class Parameters(AnsibleF5Parameters):
         'host',
         'username',
         'password',
+        'cert_fingerprint',
     ]
 
     updatables = [
@@ -423,6 +432,7 @@ class ModuleManager(object):
         else:
             uri = f"/device/v1/providers/vsphere?filter=name+eq+'{self.want.name}'"
 
+        uri = quote(uri)
         response = self.client.get(uri)
 
         if response['code'] not in [200, 201, 202]:
@@ -529,6 +539,7 @@ class ArgumentSpec(object):
             ),
             address=dict(),
             port=dict(type='int'),
+            cert_fingerprint=dict(no_log=True),
             username=dict(),
             password=dict(no_log=True),
             force=dict(type='bool', default='no'),

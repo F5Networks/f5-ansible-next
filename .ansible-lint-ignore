@@ -1,3 +1,2 @@
 # This file contains ignores rule violations for ansible-lint
-ansible_collections/f5networks/next/galaxy.yml galaxy[no-changelog]
-ansible_collections/f5networks/next/galaxy.yml galaxy[version-incorrect]
+ansible_collections/f5networks/next/changelogs/changelog.yaml yaml[indentation]
