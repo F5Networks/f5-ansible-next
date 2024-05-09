@@ -62,3 +62,11 @@ releases:
     release_date: '2024-03-29'
   1.0.1:
     release_date: '2024-03-29'
+  1.1.0:
+    changes:
+      bugfixes:
+      - cm_next_provider.py - fixed a bug that occurred why the provider name has
+        a space
+    fragments:
+    - cm-provider-bugfix.yaml
+    release_date: '2024-05-09'

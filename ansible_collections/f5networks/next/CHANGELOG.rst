@@ -4,6 +4,14 @@ F5Networks F5 BIG-IP Next Collection Release Notes
 
 .. contents:: Topics
 
+v1.1.0
+======
+
+Bugfixes
+--------
+
+- cm_next_provider.py - fixed a bug that occurred why the provider name has a space
+
 v1.0.1
 ======
 
