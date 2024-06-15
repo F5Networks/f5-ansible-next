@@ -473,6 +473,13 @@ class ModuleManager(object):
 
         response = self.client.post(uri, output)
 
+        if response['code'] == 500:
+            params['cert_fingerprint'] = response['contents'].split()[1][:-1].replace("'","")
+            output = process_json(params, create)
+            response = self.client.post(uri, output)
+            if response['code'] not in [200, 201, 202]:
+                raise F5ModuleError(response['contents'])
+
         if response['code'] not in [200, 201, 202]:
             raise F5ModuleError(response['contents'])
         self.log_message("Provider creation successful")
