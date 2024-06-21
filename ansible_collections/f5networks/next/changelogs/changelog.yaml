@@ -70,3 +70,10 @@ releases:
     fragments:
     - cm-provider-bugfix.yaml
     release_date: '2024-05-09'
+  1.2.0:
+    changes:
+      bugfixes:
+      - cm_next_provider.py - fixed a bug that occurred when adding provider on nutmug
+    fragments:
+    - cm-provider-bugfix.yaml
+    release_date: '2024-06-21'

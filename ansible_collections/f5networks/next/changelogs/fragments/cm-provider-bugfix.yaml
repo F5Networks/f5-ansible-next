@@ -1,3 +1,0 @@
----
-bugfixes:
-  - cm_next_provider.py - fixed a bug that occurred when adding provider on nutmug
