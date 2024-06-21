@@ -5,7 +5,7 @@ deploying BIG-IP Next instances as well as modules to manage CM devices.
 
 ## Requirements
 
- - ansible >= 2.14
+ - ansible >= 2.15
 
 ## Python Version
 This collection is supported on Python 3.9 and above.
