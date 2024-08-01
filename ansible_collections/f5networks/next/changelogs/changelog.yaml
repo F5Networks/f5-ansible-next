@@ -77,3 +77,5 @@ releases:
     fragments:
     - cm-provider-bugfix.yaml
     release_date: '2024-06-21'
+  1.2.1:
+    release_date: '2024-08-01'
