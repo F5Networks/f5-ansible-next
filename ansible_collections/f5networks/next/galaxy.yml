@@ -1,5 +1,6 @@
 authors:
   - Wojciech Wypior (@wojtek0806)
+  - Rohit Upadhyay (@urohit011)
 dependencies:
   ansible.netcommon: ">=2.0.0"
 description: BIG-IP Next collection to manage Next instances with BIG-IP Next Central Manager
@@ -17,4 +18,4 @@ tags:
   - networking
   - next
   - cm
-version: 1.3.0-devel
+version: 1.3.0

@@ -4,6 +4,14 @@ F5Networks F5 BIG-IP Next Collection Release Notes
 
 .. contents:: Topics
 
+v1.3.0
+======
+
+New Modules
+-----------
+
+- cm_next_license - Manage license activation and deactivation of BIG-IP Next instances.
+
 v1.2.1
 ======
 
