@@ -1,0 +1,13 @@
+{
+    "foo": {
+        "_links": {
+            "self": {
+                "href": "/license-task/d297d775"
+            }
+        },
+        "accepted": true,
+        "deviceId": "foo",
+        "reason": "",
+        "taskId": "d297d775"
+    }
+}

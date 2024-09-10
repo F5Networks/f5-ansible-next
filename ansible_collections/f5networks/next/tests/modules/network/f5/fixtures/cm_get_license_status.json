@@ -1,0 +1,15 @@
+{
+    "foo": {
+        "_links": {
+            "self": {
+                "href": "foo"
+            }
+        },
+        "deviceLicenseStatus": {
+            "expiryDate": "2024-09-27T04:18:34Z",
+            "licenseStatus": "InActive",
+            "subscriptionSubType": "trial",
+            "subscriptionType": "eval"
+        }
+    }
+}

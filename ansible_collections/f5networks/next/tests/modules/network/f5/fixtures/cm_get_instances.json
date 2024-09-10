@@ -1,0 +1,33 @@
+{
+    "_embedded": {
+        "devices": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "/api/v1/spaces/default/instances/foo"
+                    }
+                },
+                "address": "1.2.3.4",
+                "analytics_node_address": "3.2.4.5",
+                "certificate_validated": "2024-08-27T08:16:26.132666Z",
+                "certificate_validation_error": "tls: failed to verify certificate: x509: certificate signed by unknown authority",
+                "certificate_validity": false,
+                "hostname": "big-ip-next",
+                "id": "foo",
+                "mode": "STANDALONE",
+                "platform_name": "KVM",
+                "platform_type": "VE",
+                "port": 5443,
+                "short_id": "bar",
+                "version": "20.3.0-2.432.2"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/api/v1/spaces/default/instances"
+        }
+    },
+    "count": 1,
+    "total": 1
+}

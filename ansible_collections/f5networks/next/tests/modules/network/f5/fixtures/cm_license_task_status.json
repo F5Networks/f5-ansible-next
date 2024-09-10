@@ -1,0 +1,16 @@
+{
+    "foo": {
+        "_links": {
+            "self": {
+                "href": "/license-task/foo"
+            }
+        },
+        "taskExecutionStatus": {
+            "created": "2024-09-04T07:58:01.688774Z",
+            "failureReason": "",
+            "status": "completed",
+            "subStatus": "ACK_VERIFICATION_COMPLETE",
+            "taskType": "activation"
+        }
+    }
+}

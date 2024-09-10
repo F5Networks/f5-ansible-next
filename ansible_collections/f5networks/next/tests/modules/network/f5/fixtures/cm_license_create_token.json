@@ -1,0 +1,18 @@
+{
+    "DuplicatesTokenNickName": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "nickName": "",
+        "orderType": ""
+    },
+    "DuplicatesTokenValue": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "nickName": "",
+        "orderType": ""
+    },
+    "NewToken": {
+        "id": "bar",
+        "nickName": "test_token",
+        "orderSubType": "trial",
+        "orderType": "eval"
+    }
+}
