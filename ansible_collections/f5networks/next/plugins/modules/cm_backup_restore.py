@@ -294,10 +294,7 @@ class ModuleManager(object):
         return self.restore_target()
 
     def absent(self):
-        if self.want.scheduled is None:
-            raise F5ModuleError("Scheduled Parameter is mandatory in order to delete the Backup")
-
-        exists, id = self.exists(self.want.scheduled)
+        exists, id = self.exists(self.want.schedule)
         if exists:
             return self.remove(id)
 
@@ -510,7 +507,7 @@ class ModuleManager(object):
         raise F5ModuleError(response['contents'])
 
     def remove_from_device(self, id):
-        if self.want.scheduled:
+        if self.want.schedule:
             uri = f'/v1/system/backups/schedule/{id}'
         else:
             uri = f'/system/v1/files/{id}'
