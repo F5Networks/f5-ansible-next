@@ -4,6 +4,9 @@ F5Networks F5 BIG-IP Next Collection Release Notes
 
 .. contents:: Topics
 
+v1.4.0
+======
+
 v1.3.1
 ======
 
