@@ -4,6 +4,14 @@ F5Networks F5 BIG-IP Next Collection Release Notes
 
 .. contents:: Topics
 
+v1.5.0
+======
+
+Minor Changes
+-------------
+
+- cm_next_as3_deploy - fixed issue of AS3 Idempotency
+
 v1.4.0
 ======
 

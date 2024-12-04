@@ -279,7 +279,7 @@ class ModuleManager(object):
 
         if response['code'] not in [200, 201, 202]:
             raise F5ModuleError(response['contents'])
-        self.log_message(f"Response:{response['contents']}")
+        self.log_message(f"Response: {response['contents']}")
         if any([response['contents'].get('count', 0) == 0, not response['contents'].get('_embedded')]):
             self.log_message("No file found")
             return False
@@ -341,7 +341,7 @@ class ModuleManager(object):
         uri = f"/api/v1/spaces/default/instances/{self.device_uuid}/proxy-file-upload"
         response = self.client.plugin.send_multipart(uri, form)
 
-        self.log_message(f"Response:{response['contents']}")
+        self.log_message(f"Response: {response['contents']}")
 
         if response['code'] not in [200, 201, 202, 204]:
             raise F5ModuleError(response['contents'])

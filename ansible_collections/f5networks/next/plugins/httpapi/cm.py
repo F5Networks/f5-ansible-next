@@ -151,7 +151,7 @@ class HttpApi(HttpApiBase):
         data = json.dumps(body) if body or body == {} else None
         try:
             self._log_api_call(method, url, body)
-            self.send_log(f"URL:{url}")
+            self.send_log(f"URL: {url}")
             response, response_data = self.connection.send(url, data, method=method, **kwargs)
             response_value = self._get_response_value(response_data)
             return dict(

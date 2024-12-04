@@ -89,3 +89,10 @@ releases:
     release_date: '2024-09-13'
   1.4.0:
     release_date: '2024-10-24'
+  1.5.0:
+    changes:
+      minor_changes:
+      - cm_next_as3_deploy - fixed issue of AS3 Idempotency
+    fragments:
+    - fix_as3_idempotency.yaml
+    release_date: '2024-12-04'

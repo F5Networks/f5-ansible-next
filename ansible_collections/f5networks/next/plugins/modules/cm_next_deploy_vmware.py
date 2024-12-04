@@ -577,8 +577,8 @@ class ModuleManager(object):
         response = self.client.get(uri)
 
         if response['code'] == 404:
-            self.log_message(f"The specified deployment task:{self.want.task_id} was not found.", 'error')
-            raise F5ModuleError(f"The specified deployment task:{self.want.task_id} was not found.")
+            self.log_message(f"The specified deployment task: {self.want.task_id} was not found.", 'error')
+            raise F5ModuleError(f"The specified deployment task: {self.want.task_id} was not found.")
 
         if response['code'] not in [200, 201, 202]:
             raise F5ModuleError(response['contents'])

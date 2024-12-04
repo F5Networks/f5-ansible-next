@@ -62,7 +62,7 @@ class TestParameters(unittest.TestCase):
 
         self.assertEqual(p.name, 'ansible-rseries')
         self.assertEqual(p.type, 'RSERIES')
-        self.assertEqual(p.host, '192.168.1.1:8888')
+        self.assertEqual(p.host, '192.168.1.1: 8888')
         self.assertEqual(p.port, 8888)
 
     def test_module_parameters_port_raises(self):
@@ -160,7 +160,7 @@ class TestManager(unittest.TestCase):
         ))
 
         expected = {'connection': {'authentication': {'password': 'sekrit', 'type': 'basic', 'username': 'admin'},
-                                   'host': '192.168.1.1:8888'}, 'name': 'ansible-rseries', 'type': 'RSERIES'}
+                                   'host': '192.168.1.1: 8888'}, 'name': 'ansible-rseries', 'type': 'RSERIES'}
         module = AnsibleModule(
             argument_spec=self.spec.argument_spec,
             supports_check_mode=self.spec.supports_check_mode,

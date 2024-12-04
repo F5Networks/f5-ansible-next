@@ -117,6 +117,8 @@ class Parameters(AnsibleF5Parameters):
 class ApiParameters(Parameters):
     @property
     def content(self):
+        if self._values['contents'].get('app_data') is None:
+            return self._values['contents'].get('request')
         return self._values['contents'].get('app_data')
 
     @property
@@ -264,7 +266,8 @@ class ModuleManager(object):
     def present(self):
         if self.exists():
             return self.update()
-        return self.create()
+        else:
+            return self.create()
 
     def update(self):
         self.have = self.get_deployed_appsvc()
@@ -297,10 +300,7 @@ class ModuleManager(object):
     def remove(self):
         if self.module.check_mode:  # pragma: no cover
             return True
-        result = self.remove_from_device()
-        if self.exists():
-            raise F5ModuleError("Failed to delete the resource.")
-        return result
+        return self.remove_from_device()
 
     def exists(self):
         declaration = {}
@@ -319,8 +319,9 @@ class ModuleManager(object):
         self.app_name = self.filter_app(self.want.content)
         self.log_message(f"[exists] app name: {self.app_name}")
 
-        uri = (f"/applications?select=health,id,instances,name,gslb_enabled,fqdn,security_policies,type,tenant_name,"
-               f"modified,successful_instances,deployments_count&filter=name+eq+'{self.app_name}'")
+        # uri = (f"/applications?select=health,id,instances,name,gslb_enabled,fqdn,security_policies,type,tenant_name,"
+        #        f"modified,successful_instances,deployments_count&filter=name+eq+'{self.app_name}'")
+        uri = (f"/applications?filter=name+eq+'{self.app_name}'")
         self.log_message(f"[exists] uri: {uri}")
         response = self.client.get(uri, scope=self.scope)
         self.log_message(f"[exists] response code: {response['code']}")
@@ -329,8 +330,8 @@ class ModuleManager(object):
         self.log_message(f"[exists] contents: {response['contents']}")
         if response['contents']['count'] == 0:
             return False
-        # if '_embedded' not in response['contents']:
-        #     return False
+        if '_embedded' not in response['contents']:
+            return False
         results = response['contents']['_embedded']['applications']
         for key, val in results[0].items():
             if key == "id":
@@ -447,6 +448,11 @@ class ModuleManager(object):
         if response['code'] not in [200, 201, 202, 204, 207]:
             raise F5ModuleError(response['contents'])
         self.log_message(f"[remove_from_device]resp: {response.get('contents')}")
+        for x in range(0, period):
+            response = self.client.get(uri, scope=self.scope)
+            if response['code'] in [404]:
+                return True
+            time.sleep(delay)
         return True
 
     def filter_app(self, content):
@@ -494,7 +500,7 @@ def main():
     try:
         mm = ModuleManager(module=module, connection=Connection(module._socket_path))
         mm.log_message(f"content: {mm.want.content}")
-        mm.log_message(f"app_name:{mm.want.app_name}")
+        mm.log_message(f"app_name: {mm.want.app_name}")
         results = mm.exec_module()
         module.exit_json(**results)
     except F5ModuleError as ex:

@@ -213,7 +213,7 @@ class ModuleParameters(Parameters):
             return None
         port = self.port
         if port:
-            return f"{self._values['address']}:{port}"
+            return f"{self._values['address']}: {port}"
         else:
             return self._values['address']
 
