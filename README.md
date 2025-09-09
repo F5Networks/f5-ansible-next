@@ -1,3 +1,7 @@
+**ARCHIVED:** This repository is archived due to: **Modernizing BIG-IP TMOS and discontinuing BIG-IP Next**.  
+For more information, see [K000152956](https://my.f5.com/manage/s/article/K000152956)
+
+
 # BIG-IP Next Collection for Ansible
 
 A collection focusing on managing BIG-IP Next devices through BIG-IP Next Central Manager (CM) API. The collection includes key imperative modules for 
